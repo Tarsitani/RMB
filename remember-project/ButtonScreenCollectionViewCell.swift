@@ -9,5 +9,6 @@
 import UIKit
 
 class ButtonScreenCollectionViewCell: UICollectionViewCell {
+    @IBOutlet weak var ButtonImageView: UIImageView!
     
 }

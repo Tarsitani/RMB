@@ -8,8 +8,12 @@
 
 import UIKit
 
-class ButtonScreenViewController: UIViewController {
+class ButtonScreenViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
 
+    @IBOutlet weak var ButtonScreenCollectionView: UICollectionView!
+    var images = ["1", "2", "3"]
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -22,11 +26,28 @@ class ButtonScreenViewController: UIViewController {
         self.navigationItem.backBarButtonItem = UIBarButtonItem(title:"", style:.plain, target:nil, action:nil) //Hide the text in the back button
         self.navigationController?.navigationBar.tintColor = UIColor.white; //Turn all the buttons white
         //Finish to set the navigation bar settings
+        
+        self.ButtonScreenCollectionView.delegate = self
+        self.ButtonScreenCollectionView.dataSource = self
+        
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return images.count
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "button_cell",  for: indexPath) as! ButtonScreenCollectionViewCell
+        
+        //set images
+        cell.ButtonImageView.image = UIImage(named: images[indexPath.row])
+        
+        return cell
     }
     
 

@@ -37,7 +37,7 @@
         <!--Title-->
         <scene sceneID="l9K-hM-S8p">
             <objects>
-                <viewController id="3p1-h2-O8w" sceneMemberID="viewController">
+                <viewController id="3p1-h2-O8w" customClass="ButtonScreenViewController" customModule="remember_project" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="VXy-h8-0V6"/>
                         <viewControllerLayoutGuide type="bottom" id="icj-mA-6wd"/>
@@ -62,7 +62,7 @@
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="wHb-Zv-twZ">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="button_cell" id="wHb-Zv-twZ" customClass="ButtonScreenCollectionViewCell" customModule="remember_project" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
@@ -75,6 +75,9 @@
                                                 </imageView>
                                             </subviews>
                                         </view>
+                                        <connections>
+                                            <outlet property="ButtonImageView" destination="L1K-wB-WC5" id="jW3-TF-IcI"/>
+                                        </connections>
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
@@ -88,6 +91,9 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="ButtonScreenCollectionView" destination="t4r-M8-lJ5" id="kwL-69-Gnm"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZTM-E1-wIk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
