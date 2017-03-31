@@ -14,7 +14,7 @@
 		91442EEC1E8BF78B001A89B7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 91442EEA1E8BF78B001A89B7 /* LaunchScreen.storyboard */; };
 		AE5056EC1E8ED7A500A7FA3A /* ButtonScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE5056EB1E8ED7A500A7FA3A /* ButtonScreenViewController.swift */; };
 		AE5056EE1E8ED7C800A7FA3A /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE5056ED1E8ED7C800A7FA3A /* MapViewController.swift */; };
-		AE5056F01E8EEFC900A7FA3A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AE5056EF1E8EEFC900A7FA3A /* Main.storyboard */; };
+		AE5056F01E8EEFC900A7FA3A /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AE5056EF1E8EEFC900A7FA3A /* Home.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,7 +27,7 @@
 		91442EED1E8BF78C001A89B7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AE5056EB1E8ED7A500A7FA3A /* ButtonScreenViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ButtonScreenViewController.swift; sourceTree = "<group>"; };
 		AE5056ED1E8ED7C800A7FA3A /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
-		AE5056EF1E8EEFC900A7FA3A /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Main.storyboard; path = ../Main.storyboard; sourceTree = "<group>"; };
+		AE5056EF1E8EEFC900A7FA3A /* Home.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Home.storyboard; path = ../Home.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,7 +65,7 @@
 				912B53DD1E8ED187000896C9 /* ButtonScreenCollectionViewCell.swift */,
 				AE5056EB1E8ED7A500A7FA3A /* ButtonScreenViewController.swift */,
 				AE5056ED1E8ED7C800A7FA3A /* MapViewController.swift */,
-				AE5056EF1E8EEFC900A7FA3A /* Main.storyboard */,
+				AE5056EF1E8EEFC900A7FA3A /* Home.storyboard */,
 				91442EE81E8BF78B001A89B7 /* Assets.xcassets */,
 				91442EEA1E8BF78B001A89B7 /* LaunchScreen.storyboard */,
 				91442EED1E8BF78C001A89B7 /* Info.plist */,
@@ -133,7 +133,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AE5056F01E8EEFC900A7FA3A /* Main.storyboard in Resources */,
+				AE5056F01E8EEFC900A7FA3A /* Home.storyboard in Resources */,
 				91442EEC1E8BF78B001A89B7 /* LaunchScreen.storyboard in Resources */,
 				91442EE91E8BF78B001A89B7 /* Assets.xcassets in Resources */,
 			);
