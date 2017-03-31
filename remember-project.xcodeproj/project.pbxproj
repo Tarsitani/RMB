@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		912B53DE1E8ED187000896C9 /* ButtonScreenCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 912B53DD1E8ED187000896C9 /* ButtonScreenCollectionViewCell.swift */; };
 		91442EE21E8BF78B001A89B7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91442EE11E8BF78B001A89B7 /* AppDelegate.swift */; };
 		91442EE41E8BF78B001A89B7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91442EE31E8BF78B001A89B7 /* ViewController.swift */; };
 		91442EE71E8BF78B001A89B7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 91442EE51E8BF78B001A89B7 /* Main.storyboard */; };
@@ -15,6 +16,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		912B53DD1E8ED187000896C9 /* ButtonScreenCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ButtonScreenCollectionViewCell.swift; sourceTree = "<group>"; };
 		91442EDE1E8BF78B001A89B7 /* remember-project.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "remember-project.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		91442EE11E8BF78B001A89B7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		91442EE31E8BF78B001A89B7 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -56,6 +58,7 @@
 			children = (
 				91442EE11E8BF78B001A89B7 /* AppDelegate.swift */,
 				91442EE31E8BF78B001A89B7 /* ViewController.swift */,
+				912B53DD1E8ED187000896C9 /* ButtonScreenCollectionViewCell.swift */,
 				91442EE51E8BF78B001A89B7 /* Main.storyboard */,
 				91442EE81E8BF78B001A89B7 /* Assets.xcassets */,
 				91442EEA1E8BF78B001A89B7 /* LaunchScreen.storyboard */,
@@ -137,6 +140,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				912B53DE1E8ED187000896C9 /* ButtonScreenCollectionViewCell.swift in Sources */,
 				91442EE41E8BF78B001A89B7 /* ViewController.swift in Sources */,
 				91442EE21E8BF78B001A89B7 /* AppDelegate.swift in Sources */,
 			);
@@ -302,6 +306,7 @@
 				91442EF21E8BF78C001A89B7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
