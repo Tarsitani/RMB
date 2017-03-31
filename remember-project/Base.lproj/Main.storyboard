@@ -128,7 +128,8 @@
                     </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="1Bk-3E-lCw" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </viewController>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="1Bk-3E-lCw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1817" y="139"/>
         </scene>
