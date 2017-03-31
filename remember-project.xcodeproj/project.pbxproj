@@ -62,12 +62,9 @@
 			children = (
 				91442EE11E8BF78B001A89B7 /* AppDelegate.swift */,
 				91442EE31E8BF78B001A89B7 /* ViewController.swift */,
-<<<<<<< HEAD
 				912B53DD1E8ED187000896C9 /* ButtonScreenCollectionViewCell.swift */,
-=======
 				AE5056EB1E8ED7A500A7FA3A /* ButtonScreenViewController.swift */,
 				AE5056ED1E8ED7C800A7FA3A /* MapViewController.swift */,
->>>>>>> f3bdbe0a5f6c23ffc43761dc7ca6428f965b063a
 				91442EE51E8BF78B001A89B7 /* Main.storyboard */,
 				91442EE81E8BF78B001A89B7 /* Assets.xcassets */,
 				91442EEA1E8BF78B001A89B7 /* LaunchScreen.storyboard */,
@@ -149,11 +146,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-<<<<<<< HEAD
 				912B53DE1E8ED187000896C9 /* ButtonScreenCollectionViewCell.swift in Sources */,
-=======
 				AE5056EC1E8ED7A500A7FA3A /* ButtonScreenViewController.swift in Sources */,
->>>>>>> f3bdbe0a5f6c23ffc43761dc7ca6428f965b063a
 				91442EE41E8BF78B001A89B7 /* ViewController.swift in Sources */,
 				91442EE21E8BF78B001A89B7 /* AppDelegate.swift in Sources */,
 				AE5056EE1E8ED7C800A7FA3A /* MapViewController.swift in Sources */,
