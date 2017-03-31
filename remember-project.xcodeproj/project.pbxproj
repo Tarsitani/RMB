@@ -13,6 +13,8 @@
 		91442EE71E8BF78B001A89B7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 91442EE51E8BF78B001A89B7 /* Main.storyboard */; };
 		91442EE91E8BF78B001A89B7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 91442EE81E8BF78B001A89B7 /* Assets.xcassets */; };
 		91442EEC1E8BF78B001A89B7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 91442EEA1E8BF78B001A89B7 /* LaunchScreen.storyboard */; };
+		AE5056EC1E8ED7A500A7FA3A /* ButtonScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE5056EB1E8ED7A500A7FA3A /* ButtonScreenViewController.swift */; };
+		AE5056EE1E8ED7C800A7FA3A /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE5056ED1E8ED7C800A7FA3A /* MapViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +26,8 @@
 		91442EE81E8BF78B001A89B7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		91442EEB1E8BF78B001A89B7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		91442EED1E8BF78C001A89B7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AE5056EB1E8ED7A500A7FA3A /* ButtonScreenViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ButtonScreenViewController.swift; sourceTree = "<group>"; };
+		AE5056ED1E8ED7C800A7FA3A /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,7 +62,12 @@
 			children = (
 				91442EE11E8BF78B001A89B7 /* AppDelegate.swift */,
 				91442EE31E8BF78B001A89B7 /* ViewController.swift */,
+<<<<<<< HEAD
 				912B53DD1E8ED187000896C9 /* ButtonScreenCollectionViewCell.swift */,
+=======
+				AE5056EB1E8ED7A500A7FA3A /* ButtonScreenViewController.swift */,
+				AE5056ED1E8ED7C800A7FA3A /* MapViewController.swift */,
+>>>>>>> f3bdbe0a5f6c23ffc43761dc7ca6428f965b063a
 				91442EE51E8BF78B001A89B7 /* Main.storyboard */,
 				91442EE81E8BF78B001A89B7 /* Assets.xcassets */,
 				91442EEA1E8BF78B001A89B7 /* LaunchScreen.storyboard */,
@@ -140,9 +149,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+<<<<<<< HEAD
 				912B53DE1E8ED187000896C9 /* ButtonScreenCollectionViewCell.swift in Sources */,
+=======
+				AE5056EC1E8ED7A500A7FA3A /* ButtonScreenViewController.swift in Sources */,
+>>>>>>> f3bdbe0a5f6c23ffc43761dc7ca6428f965b063a
 				91442EE41E8BF78B001A89B7 /* ViewController.swift in Sources */,
 				91442EE21E8BF78B001A89B7 /* AppDelegate.swift in Sources */,
+				AE5056EE1E8ED7C800A7FA3A /* MapViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

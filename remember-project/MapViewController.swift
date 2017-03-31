@@ -1,24 +1,19 @@
 //
-//  ViewController.swift
+//  MapViewController.swift
 //  remember-project
 //
-//  Created by Lucas Tarsitani on 29/03/17.
+//  Created by Matheus Garcia on 31/03/17.
 //  Copyright © 2017 Lucas Tarsitani. All rights reserved.
 //
 
 import UIKit
 
-class ViewController: UIViewController {
-<<<<<<< HEAD
-    
-    
-=======
->>>>>>> f3bdbe0a5f6c23ffc43761dc7ca6428f965b063a
+class MapViewController: UIViewController {
 
-    @IBOutlet weak var ButtonsCollectionView: UICollectionView!
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
+        // Do any additional setup after loading the view.
         //Started to set the navigation bar settings
         self.navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.white] //Turn the title withe
         self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default) //Make the background cover the bar
@@ -34,8 +29,15 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    
 
+    /*
+    // MARK: - Navigation
+
+    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        // Get the new view controller using segue.destinationViewController.
+        // Pass the selected object to the new view controller.
+    }
+    */
 
 }
-
