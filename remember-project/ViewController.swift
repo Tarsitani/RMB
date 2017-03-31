@@ -9,11 +9,6 @@
 import UIKit
 
 class ViewController: UIViewController {
-<<<<<<< HEAD
-    
-    
-=======
->>>>>>> f3bdbe0a5f6c23ffc43761dc7ca6428f965b063a
 
     @IBOutlet weak var ButtonsCollectionView: UICollectionView!
     override func viewDidLoad() {
