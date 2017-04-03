@@ -9,10 +9,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Title-->
+        <!--Localization(home)-->
         <scene sceneID="Hi1-SR-uwF">
             <objects>
-                <viewController id="2vR-KO-pqZ" sceneMemberID="viewController">
+                <viewController id="2vR-KO-pqZ" customClass="LocalizationScreenViewController" customModule="remember_project" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="b7J-tH-SeU"/>
                         <viewControllerLayoutGuide type="bottom" id="PsC-AG-CtY"/>
@@ -20,21 +20,62 @@
                     <view key="view" contentMode="scaleToFill" id="smz-q3-hxb">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="xa0-9p-anE">
+                                <rect key="frame" x="14" y="406" width="347" height="31"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </slider>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="5Ui-R7-9Ei">
+                                <rect key="frame" x="16" y="459" width="343" height="170"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="XCR-He-R8w">
+                                    <size key="itemSize" width="70" height="70"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="remember_object" id="ITJ-bZ-tWT" customClass="LocalizationScreenCollectionViewCell" customModule="remember_project" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="70" height="70"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="70" height="70"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bsw-fo-qs3">
+                                                    <rect key="frame" x="5" y="5" width="60" height="60"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                </imageView>
+                                            </subviews>
+                                        </view>
+                                        <size key="customSize" width="70" height="70"/>
+                                        <connections>
+                                            <outlet property="choosenObjectImage" destination="bsw-fo-qs3" id="44U-MT-0Qc"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Title" id="biy-L3-bEi">
+                    <navigationItem key="navigationItem" title="Localization(home)" id="biy-L3-bEi">
                         <barButtonItem key="rightBarButtonItem" title="Item" id="VSg-Tu-edU">
                             <connections>
                                 <segue destination="3p1-h2-O8w" kind="show" id="4x2-sA-bX5"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="LocalizationScreenCollectionView" destination="5Ui-R7-9Ei" id="yes-3a-FeW"/>
+                        <outlet property="choosenObjects" destination="5Ui-R7-9Ei" id="q3N-Dc-cnT"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gve-g2-BCg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-276" y="97"/>
+            <point key="canvasLocation" x="-276" y="96.7016491754123"/>
         </scene>
-        <!--Title-->
+        <!--ButtonScreen-->
         <scene sceneID="l9K-hM-S8p">
             <objects>
                 <viewController id="3p1-h2-O8w" customClass="ButtonScreenViewController" customModule="remember_project" customModuleProvider="target" sceneMemberID="viewController">
@@ -56,25 +97,26 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="tH9-7N-yDr">
-                                    <size key="itemSize" width="50" height="50"/>
+                                    <size key="itemSize" width="70" height="70"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="button_cell" id="wHb-Zv-twZ" customClass="ButtonScreenCollectionViewCell" customModule="remember_project" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="70" height="70"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="70" height="70"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="L1K-wB-WC5">
-                                                    <rect key="frame" x="10" y="10" width="30" height="30"/>
+                                                    <rect key="frame" x="5" y="5" width="60" height="60"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 </imageView>
                                             </subviews>
                                         </view>
+                                        <size key="customSize" width="70" height="70"/>
                                         <connections>
                                             <outlet property="ButtonImageView" destination="L1K-wB-WC5" id="jW3-TF-IcI"/>
                                         </connections>
@@ -84,7 +126,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Title" id="vhm-v6-ybD">
+                    <navigationItem key="navigationItem" title="ButtonScreen" id="vhm-v6-ybD">
                         <barButtonItem key="rightBarButtonItem" title="Item" id="4rK-7p-nZA">
                             <connections>
                                 <segue destination="nW2-OC-oiD" kind="show" id="D30-2c-XdO"/>

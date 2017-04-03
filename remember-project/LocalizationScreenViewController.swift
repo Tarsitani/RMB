@@ -1,23 +1,22 @@
 //
-//  ButtonScreenViewController.swift
+//  LocalizationScreenViewController.swift
 //  remember-project
 //
-//  Created by Matheus Garcia on 31/03/17.
+//  Created by Lucas Tarsitani on 03/04/17.
 //  Copyright © 2017 Lucas Tarsitani. All rights reserved.
 //
 
 import UIKit
 
-class ButtonScreenViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
-
-    @IBOutlet weak var ButtonScreenCollectionView: UICollectionView!
+class LocalizationScreenViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
+    
+    @IBOutlet weak var LocalizationScreenCollectionView: UICollectionView!
     
     var objectsImages = ListObjectsMenu()
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         // Do any additional setup after loading the view.
         //Started to set the navigation bar settings
         self.navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.white] //Turn the title white
@@ -28,38 +27,35 @@ class ButtonScreenViewController: UIViewController, UICollectionViewDelegate, UI
         self.navigationController?.navigationBar.tintColor = UIColor.white; //Turn all the buttons white
         //Finish to set the navigation bar settings
         
-        self.ButtonScreenCollectionView.delegate = self
-        self.ButtonScreenCollectionView.dataSource = self
+        self.LocalizationScreenCollectionView.delegate = self
+        self.LocalizationScreenCollectionView.dataSource = self
         
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+    internal func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int{
         return objectsImages.getObjectsList().count
     }
     
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "button_cell",  for: indexPath) as! ButtonScreenCollectionViewCell
+    //take the images from objects and reply them on the display
+    internal func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell{
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "remember_object",  for: indexPath) as!LocalizationScreenCollectionViewCell
         
-        //set images
-        cell.ButtonImageView.image = UIImage(named: objectsImages.getObjectsList()[indexPath.row])
+        cell.choosenObjectImage.image = UIImage (named: objectsImages.getObjectsList()[indexPath.row])
         
         return cell
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
+
+
+
+
+
+
+
+
+
