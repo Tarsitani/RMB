@@ -12,27 +12,31 @@ import UIKit
 //Easy to manage the list of objects that will be implemented
 class ListObjectsMenu: NSObject {
     
-    //All objects buttons reference
-    var objectsReference = [objectItem]
     
     
-    func getObjectsList() -> [objectItem]{
-        return objectsReference
+    //list of objects that will appear in buttonScreen
+    var allObjects = [ObjectItem]()
+    
+    
+    func getObjectName(indexPath: Int) -> String{
+        return allObjects[indexPath].objectName
     }
     
-    //To add a new object in reference
-    struct objectItem {
+    func getAllObjectsSize() -> Int{
+        return allObjects.count
+    }
+    
+    //Object in reference. Index: image position in objectsReference. Name: the same name of the image, to print it in the screen
+    struct ObjectItem {
         var objectIndex: Int
         var objectName: String
     }
     
+    //It will add a new item in reference
     func setNewObject(index: Int, name: String){
-        var newObject = objectItem
+        let newObject = ObjectItem(objectIndex: index, objectName: name)
         
-        objectItem.objectIndex = index
-        objectName = name
-        
-        objectsReference.append(newObject)
+        allObjects.append(newObject)
         
     }
 }

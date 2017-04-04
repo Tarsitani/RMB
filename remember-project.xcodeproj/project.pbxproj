@@ -70,19 +70,35 @@
 			children = (
 				91442EE11E8BF78B001A89B7 /* AppDelegate.swift */,
 				91442EE81E8BF78B001A89B7 /* Assets.xcassets */,
-				912B53DD1E8ED187000896C9 /* ButtonScreenCollectionViewCell.swift */,
-				AE5056EB1E8ED7A500A7FA3A /* ButtonScreenViewController.swift */,
+				917147351E93C97200D2CDE7 /* CollectionViewCell */,
+				917147341E93C92000D2CDE7 /* ViewController */,
 				AE5056EF1E8EEFC900A7FA3A /* Home.storyboard */,
 				91442EED1E8BF78C001A89B7 /* Info.plist */,
 				91442EEA1E8BF78B001A89B7 /* LaunchScreen.storyboard */,
-				917147321E929FD100D2CDE7 /* ListObjectsMenu.swift */,
-				9171472C1E9293E600D2CDE7 /* LocalizationScreenCollectionViewCell.swift */,
-				9171472E1E9296A200D2CDE7 /* LocalizationScreenViewController.swift */,
 				917147301E929BB900D2CDE7 /* NavigationController.swift */,
+				917147321E929FD100D2CDE7 /* ListObjectsMenu.swift */,
 				9171472A1E927EB400D2CDE7 /* ObjectListOnLocalizationScreen.swift */,
-				91442EE31E8BF78B001A89B7 /* ViewController.swift */,
 			);
 			path = "remember-project";
+			sourceTree = "<group>";
+		};
+		917147341E93C92000D2CDE7 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				9171472E1E9296A200D2CDE7 /* LocalizationScreenViewController.swift */,
+				AE5056EB1E8ED7A500A7FA3A /* ButtonScreenViewController.swift */,
+				91442EE31E8BF78B001A89B7 /* ViewController.swift */,
+			);
+			name = ViewController;
+			sourceTree = "<group>";
+		};
+		917147351E93C97200D2CDE7 /* CollectionViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				912B53DD1E8ED187000896C9 /* ButtonScreenCollectionViewCell.swift */,
+				9171472C1E9293E600D2CDE7 /* LocalizationScreenCollectionViewCell.swift */,
+			);
+			name = CollectionViewCell;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

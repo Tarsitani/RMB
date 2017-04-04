@@ -11,31 +11,28 @@ import UIKit
 
 protocol ObjectListDisplay: NSObjectProtocol {
     
-    func display(/*itemsTotal: Int,*/ imageName: String)
+    func display(imageName: String)
     
 }
 
-var objectList = ListObjectsMenu()
-
-var objectLibrary = objectList.getObjectsList()
+var objectLibrary = ListObjectsMenu()
 
 
-struct object{
-    //var objectIndex: Int
-    var objectClassification: String
+struct Object{
+    var objectName: String
 }
 
 
 class ObjectListOnLocalizationScreen: NSObject {
     
     //Will be set a list of pressed objects buttons to show on LocalizationScreen
-    public private(set) var listOfObjects = [object]()
+    public private(set) var listOfObjects = [Object]()
     
     public weak var delegate: ObjectListDisplay?
     
-    //add the pressed item to the list of objects in the remeber(home) screen
+    //Receive from buttonScreen an objecte, that was pressed, and add it to the listo of objects to be remeber in localizationScreen
     func addItem(objectPressed: String){
-        let newObject = object(/*objectIndex: objectPressed,*/ objectClassification: String(objectLibrary[objectPressed]!))
+        let newObject = Object(objectName: objectPressed)
         
         listOfObjects.append(newObject)
     }

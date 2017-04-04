@@ -10,6 +10,6 @@ import UIKit
 
 class LocalizationScreenCollectionViewCell: UICollectionViewCell {
     
-    @IBOutlet weak var choosenObjectImage: UIImageView!
+    @IBOutlet weak var rememberScreenButton: UIButton!
     
 }

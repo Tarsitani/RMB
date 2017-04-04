@@ -22,9 +22,16 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="xa0-9p-anE">
-                                <rect key="frame" x="14" y="406" width="347" height="31"/>
+                                <rect key="frame" x="14" y="352" width="347" height="31"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </slider>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="NAME: --" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="va3-ob-jKx">
+                                <rect key="frame" x="87" y="400" width="200" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="5Ui-R7-9Ei">
                                 <rect key="frame" x="16" y="459" width="343" height="170"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -43,15 +50,19 @@
                                             <rect key="frame" x="0.0" y="0.0" width="70" height="70"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bsw-fo-qs3">
-                                                    <rect key="frame" x="5" y="5" width="60" height="60"/>
+                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JDv-nf-m4Q">
+                                                    <rect key="frame" x="3" y="3" width="65" height="65"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                </imageView>
+                                                    <state key="normal" title="button_remember"/>
+                                                    <connections>
+                                                        <action selector="rememberObjectButton:" destination="2vR-KO-pqZ" eventType="touchUpInside" id="OKJ-gd-Hs4"/>
+                                                    </connections>
+                                                </button>
                                             </subviews>
                                         </view>
                                         <size key="customSize" width="70" height="70"/>
                                         <connections>
-                                            <outlet property="choosenObjectImage" destination="bsw-fo-qs3" id="44U-MT-0Qc"/>
+                                            <outlet property="rememberScreenButton" destination="JDv-nf-m4Q" id="8YM-0M-0Ku"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
@@ -67,8 +78,10 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="LocalizationCollectionView" destination="5Ui-R7-9Ei" id="9wQ-Ow-DsA"/>
                         <outlet property="LocalizationScreenCollectionView" destination="5Ui-R7-9Ei" id="yes-3a-FeW"/>
                         <outlet property="choosenObjects" destination="5Ui-R7-9Ei" id="q3N-Dc-cnT"/>
+                        <outlet property="objectNameLabel" destination="va3-ob-jKx" id="bi8-de-Agh"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gve-g2-BCg" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -93,7 +106,7 @@
                                 <textInputTraits key="textInputTraits"/>
                             </searchBar>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="t4r-M8-lJ5">
-                                <rect key="frame" x="0.0" y="119" width="375" height="548"/>
+                                <rect key="frame" x="16" y="119" width="343" height="528"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="tH9-7N-yDr">
@@ -103,22 +116,27 @@
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="button_cell" id="wHb-Zv-twZ" customClass="ButtonScreenCollectionViewCell" customModule="remember_project" customModuleProvider="target">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="remember_cell" id="wHb-Zv-twZ" customClass="ButtonScreenCollectionViewCell" customModule="remember_project" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="70" height="70"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="0.0" y="0.0" width="70" height="70"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="L1K-wB-WC5">
-                                                    <rect key="frame" x="5" y="5" width="60" height="60"/>
+                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rxE-Li-Hnm">
+                                                    <rect key="frame" x="2" y="2" width="65" height="65"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                </imageView>
+                                                    <state key="normal" title="button_object"/>
+                                                    <connections>
+                                                        <action selector="objectImageButton:" destination="wHb-Zv-twZ" eventType="touchUpInside" id="JQ6-kL-JeM"/>
+                                                        <action selector="objectImageButtons:" destination="3p1-h2-O8w" eventType="touchUpInside" id="c2V-aB-Lb4"/>
+                                                    </connections>
+                                                </button>
                                             </subviews>
                                         </view>
                                         <size key="customSize" width="70" height="70"/>
                                         <connections>
-                                            <outlet property="ButtonImageView" destination="L1K-wB-WC5" id="jW3-TF-IcI"/>
+                                            <outlet property="objectImageButton" destination="rxE-Li-Hnm" id="CfD-Oq-yUS"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
@@ -135,6 +153,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="ButtonScreenCollectionView" destination="t4r-M8-lJ5" id="kwL-69-Gnm"/>
+                        <outlet property="objectImageButton" destination="rxE-Li-Hnm" id="qe6-nE-fIv"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZTM-E1-wIk" userLabel="First Responder" sceneMemberID="firstResponder"/>
