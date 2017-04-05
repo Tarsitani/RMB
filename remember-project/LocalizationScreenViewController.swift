@@ -57,6 +57,9 @@ class LocalizationScreenViewController: UIViewController, UICollectionViewDelega
         
         return cell
     }
+    
+    @IBAction func unwideToBegin(segue: UIStoryboardSegue) {
+    }
 }
 
 

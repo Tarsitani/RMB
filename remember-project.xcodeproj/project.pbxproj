@@ -17,6 +17,7 @@
 		9171472F1E9296A200D2CDE7 /* LocalizationScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9171472E1E9296A200D2CDE7 /* LocalizationScreenViewController.swift */; };
 		917147311E929BB900D2CDE7 /* NavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 917147301E929BB900D2CDE7 /* NavigationController.swift */; };
 		917147331E929FD100D2CDE7 /* ListObjectsMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 917147321E929FD100D2CDE7 /* ListObjectsMenu.swift */; };
+		AE37346C1E952BA400669FC9 /* CancelPopupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE37346B1E952BA400669FC9 /* CancelPopupViewController.swift */; };
 		AE5056EC1E8ED7A500A7FA3A /* ButtonScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE5056EB1E8ED7A500A7FA3A /* ButtonScreenViewController.swift */; };
 		AE5056F01E8EEFC900A7FA3A /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AE5056EF1E8EEFC900A7FA3A /* Home.storyboard */; };
 /* End PBXBuildFile section */
@@ -34,6 +35,7 @@
 		9171472E1E9296A200D2CDE7 /* LocalizationScreenViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocalizationScreenViewController.swift; sourceTree = "<group>"; };
 		917147301E929BB900D2CDE7 /* NavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationController.swift; sourceTree = "<group>"; };
 		917147321E929FD100D2CDE7 /* ListObjectsMenu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListObjectsMenu.swift; sourceTree = "<group>"; };
+		AE37346B1E952BA400669FC9 /* CancelPopupViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CancelPopupViewController.swift; sourceTree = "<group>"; };
 		AE5056EB1E8ED7A500A7FA3A /* ButtonScreenViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ButtonScreenViewController.swift; sourceTree = "<group>"; };
 		AE5056EF1E8EEFC900A7FA3A /* Home.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Home.storyboard; path = ../Home.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -87,6 +89,7 @@
 			children = (
 				9171472E1E9296A200D2CDE7 /* LocalizationScreenViewController.swift */,
 				AE5056EB1E8ED7A500A7FA3A /* ButtonScreenViewController.swift */,
+				AE37346B1E952BA400669FC9 /* CancelPopupViewController.swift */,
 				91442EE31E8BF78B001A89B7 /* ViewController.swift */,
 			);
 			name = ViewController;
@@ -181,6 +184,7 @@
 				912B53DE1E8ED187000896C9 /* ButtonScreenCollectionViewCell.swift in Sources */,
 				AE5056EC1E8ED7A500A7FA3A /* ButtonScreenViewController.swift in Sources */,
 				91442EE41E8BF78B001A89B7 /* ViewController.swift in Sources */,
+				AE37346C1E952BA400669FC9 /* CancelPopupViewController.swift in Sources */,
 				917147331E929FD100D2CDE7 /* ListObjectsMenu.swift in Sources */,
 				91442EE21E8BF78B001A89B7 /* AppDelegate.swift in Sources */,
 			);

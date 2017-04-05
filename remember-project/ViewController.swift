@@ -10,20 +10,18 @@ import UIKit
 
 class ViewController: UIViewController {
     @IBOutlet weak var ButtonsCollectionView: UICollectionView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+<<<<<<< HEAD
         
+=======
+>>>>>>> 4a8b54a958eafc6944ea97dd436c1853d693dbca
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
-    @IBAction func unwideToHome(segue: UIStoryboardSegue) {
-    
-    }
-
-
 }
 
