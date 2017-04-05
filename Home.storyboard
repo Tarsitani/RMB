@@ -164,7 +164,7 @@
         <!--Title-->
         <scene sceneID="bPQ-by-OmX">
             <objects>
-                <viewController modalTransitionStyle="crossDissolve" modalPresentationStyle="overCurrentContext" id="nW2-OC-oiD" sceneMemberID="viewController">
+                <viewController modalTransitionStyle="crossDissolve" modalPresentationStyle="overCurrentContext" id="nW2-OC-oiD" customClass="CancelPopupViewController" customModule="remember_project" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="LNU-Hf-1c6"/>
                         <viewControllerLayoutGuide type="bottom" id="doe-Mq-eIk"/>
@@ -195,6 +195,9 @@
                                             <constraint firstAttribute="height" constant="46" id="9gu-Ht-9tx"/>
                                         </constraints>
                                         <state key="normal" title="Yes"/>
+                                        <connections>
+                                            <action selector="yesWasPressed:" destination="nW2-OC-oiD" eventType="touchUpInside" id="eR9-Wb-IIn"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wxF-gB-SX1">
                                         <rect key="frame" x="0.0" y="94" width="257" height="46"/>
@@ -204,6 +207,9 @@
                                             <constraint firstAttribute="height" constant="46" id="aeC-qi-1UF"/>
                                         </constraints>
                                         <state key="normal" title="No"/>
+                                        <connections>
+                                            <action selector="noWasPressed:" destination="nW2-OC-oiD" eventType="touchUpInside" id="QaF-dV-YeU"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" red="0.7843137255" green="0.7843137255" blue="0.7843137255" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
