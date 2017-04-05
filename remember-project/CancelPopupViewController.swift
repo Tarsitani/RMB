@@ -17,6 +17,7 @@ class CancelPopupViewController: UIViewController {
     }
     
     @IBAction func yesWasPressed(_ sender: UIButton) {
+        self.performSegue(withIdentifier: "goBack", sender: self)
     }
     
     @IBAction func noWasPressed(_ sender: UIButton) {

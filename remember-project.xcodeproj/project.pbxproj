@@ -89,8 +89,8 @@
 			children = (
 				9171472E1E9296A200D2CDE7 /* LocalizationScreenViewController.swift */,
 				AE5056EB1E8ED7A500A7FA3A /* ButtonScreenViewController.swift */,
-				91442EE31E8BF78B001A89B7 /* ViewController.swift */,
 				AE37346B1E952BA400669FC9 /* CancelPopupViewController.swift */,
+				91442EE31E8BF78B001A89B7 /* ViewController.swift */,
 			);
 			name = ViewController;
 			sourceTree = "<group>";
