@@ -9,7 +9,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Localization(home)-->
+        <!--Remember Me-->
         <scene sceneID="Hi1-SR-uwF">
             <objects>
                 <viewController id="2vR-KO-pqZ" customClass="LocalizationScreenViewController" customModule="remember_project" customModuleProvider="target" sceneMemberID="viewController">
@@ -70,10 +70,10 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Localization(home)" id="biy-L3-bEi">
-                        <barButtonItem key="rightBarButtonItem" title="Item" id="VSg-Tu-edU">
+                    <navigationItem key="navigationItem" title="Remember Me" id="biy-L3-bEi">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="VSg-Tu-edU">
                             <connections>
-                                <segue destination="3p1-h2-O8w" kind="show" id="4x2-sA-bX5"/>
+                                <segue destination="3p1-h2-O8w" kind="show" id="Y7P-pc-meP"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -88,7 +88,7 @@
             </objects>
             <point key="canvasLocation" x="-276" y="96.7016491754123"/>
         </scene>
-        <!--ButtonScreen-->
+        <!--Choose Your Itens-->
         <scene sceneID="l9K-hM-S8p">
             <objects>
                 <viewController id="3p1-h2-O8w" customClass="ButtonScreenViewController" customModule="remember_project" customModuleProvider="target" sceneMemberID="viewController">
@@ -144,12 +144,13 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" title="ButtonScreen" id="vhm-v6-ybD">
-                        <barButtonItem key="rightBarButtonItem" title="Item" id="4rK-7p-nZA">
+                    <navigationItem key="navigationItem" title="Choose Your Itens" id="vhm-v6-ybD">
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="POd-Z5-hRh">
                             <connections>
-                                <segue destination="nW2-OC-oiD" kind="show" id="D30-2c-XdO"/>
+                                <segue destination="nW2-OC-oiD" kind="presentation" id="v2Y-rB-XKT"/>
                             </connections>
                         </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="4rK-7p-nZA"/>
                     </navigationItem>
                     <connections>
                         <outlet property="ButtonScreenCollectionView" destination="t4r-M8-lJ5" id="kwL-69-Gnm"/>
@@ -158,20 +159,80 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZTM-E1-wIk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="464.80000000000001" y="96.7016491754123"/>
+            <point key="canvasLocation" x="-276" y="813"/>
         </scene>
         <!--Title-->
         <scene sceneID="bPQ-by-OmX">
             <objects>
-                <viewController id="nW2-OC-oiD" sceneMemberID="viewController">
+                <viewController modalTransitionStyle="crossDissolve" modalPresentationStyle="overCurrentContext" id="nW2-OC-oiD" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="LNU-Hf-1c6"/>
                         <viewControllerLayoutGuide type="bottom" id="doe-Mq-eIk"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="1RL-xN-rLg">
+                    <view key="view" contentMode="scaleToFill" id="xG4-8r-yy5">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <subviews>
+                            <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZP7-PR-aTP">
+                                <rect key="frame" x="59" y="263.5" width="257" height="140"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cancel the Operation" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="M6z-aR-A8M">
+                                        <rect key="frame" x="0.0" y="0.0" width="257" height="46"/>
+                                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="46" id="K3E-9O-DMW"/>
+                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="46" id="Yyr-Ox-haG"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="N9U-iC-taj">
+                                        <rect key="frame" x="0.0" y="47" width="257" height="46"/>
+                                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="46" id="7Su-Hs-uon"/>
+                                            <constraint firstAttribute="height" constant="46" id="9gu-Ht-9tx"/>
+                                        </constraints>
+                                        <state key="normal" title="Yes"/>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wxF-gB-SX1">
+                                        <rect key="frame" x="0.0" y="94" width="257" height="46"/>
+                                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="46" id="2bJ-hz-Rm8"/>
+                                            <constraint firstAttribute="height" constant="46" id="aeC-qi-1UF"/>
+                                        </constraints>
+                                        <state key="normal" title="No"/>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" red="0.7843137255" green="0.7843137255" blue="0.7843137255" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstItem="M6z-aR-A8M" firstAttribute="leading" secondItem="ZP7-PR-aTP" secondAttribute="leading" id="1kn-VG-4g5"/>
+                                    <constraint firstItem="M6z-aR-A8M" firstAttribute="leading" secondItem="ZP7-PR-aTP" secondAttribute="leading" id="2Oz-hO-ei3"/>
+                                    <constraint firstAttribute="trailing" secondItem="M6z-aR-A8M" secondAttribute="trailing" id="8Ar-nv-4xf"/>
+                                    <constraint firstAttribute="trailing" secondItem="N9U-iC-taj" secondAttribute="trailing" id="CnC-uC-rLa"/>
+                                    <constraint firstAttribute="width" constant="257" id="EtH-Lp-FaV"/>
+                                    <constraint firstAttribute="height" constant="140" id="KkW-q6-CUi"/>
+                                    <constraint firstItem="wxF-gB-SX1" firstAttribute="leading" secondItem="ZP7-PR-aTP" secondAttribute="leading" id="Nnr-Hy-ZWz"/>
+                                    <constraint firstItem="N9U-iC-taj" firstAttribute="leading" secondItem="ZP7-PR-aTP" secondAttribute="leading" id="dXW-9c-0x3"/>
+                                    <constraint firstItem="wxF-gB-SX1" firstAttribute="top" secondItem="N9U-iC-taj" secondAttribute="bottom" constant="1" id="h0s-cO-ji7"/>
+                                    <constraint firstItem="N9U-iC-taj" firstAttribute="top" secondItem="M6z-aR-A8M" secondAttribute="bottom" constant="1" id="ij2-Q5-4vx"/>
+                                    <constraint firstAttribute="trailing" secondItem="wxF-gB-SX1" secondAttribute="trailing" id="pji-up-c18"/>
+                                    <constraint firstItem="M6z-aR-A8M" firstAttribute="top" secondItem="ZP7-PR-aTP" secondAttribute="top" id="tom-hP-959"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.24917059080000001" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="ZP7-PR-aTP" firstAttribute="centerX" secondItem="xG4-8r-yy5" secondAttribute="centerX" id="KAP-aT-dBy"/>
+                            <constraint firstItem="ZP7-PR-aTP" firstAttribute="centerY" secondItem="xG4-8r-yy5" secondAttribute="centerY" id="fcq-GN-w0F"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Title" id="Inf-wx-J1k">
                         <barButtonItem key="rightBarButtonItem" title="Item" id="TQJ-77-LqD"/>
@@ -179,7 +240,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1jB-dq-8Ng" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1185" y="97"/>
+            <point key="canvasLocation" x="-1031.2" y="812.74362818590714"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="NaT-m0-dVa">

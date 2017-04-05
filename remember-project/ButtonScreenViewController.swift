@@ -17,16 +17,6 @@ class ButtonScreenViewController: UIViewController, UICollectionViewDelegate, UI
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
-        //Started to set the navigation bar settings
-        self.navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.white] //Turn the title white
-        self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default) //Make the background cover the bar
-        self.navigationController?.navigationBar.shadowImage = UIImage()
-        self.navigationController?.navigationBar.isTranslucent = true //Turn translucide the bar
-        self.navigationItem.backBarButtonItem = UIBarButtonItem(title:"", style:.plain, target:nil, action:nil) //Hide the text in the back button
-        self.navigationController?.navigationBar.tintColor = UIColor.white; //Turn all the buttons white
-        //Finish to set the navigation bar settings
         
         self.ButtonScreenCollectionView.delegate = self
         self.ButtonScreenCollectionView.dataSource = self
