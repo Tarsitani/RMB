@@ -21,17 +21,12 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="NAME: --" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="va3-ob-jKx">
-                                <rect key="frame" x="16" y="421" width="200" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="5Ui-R7-9Ei">
-                                <rect key="frame" x="16" y="459" width="343" height="170"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="5Ui-R7-9Ei">
+                                <rect key="frame" x="15" y="582" width="345" height="70"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="70" id="zJH-a7-n5S"/>
+                                </constraints>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="XCR-He-R8w">
                                     <size key="itemSize" width="70" height="70"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -63,12 +58,34 @@
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
-                            <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="xa0-9p-anE">
-                                <rect key="frame" x="14" y="383" width="347" height="31"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="xa0-9p-anE">
+                                <rect key="frame" x="13" y="537" width="349" height="31"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="Suh-la-eUM"/>
+                                </constraints>
                             </slider>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="NAME: --" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="va3-ob-jKx">
+                                <rect key="frame" x="15" y="492" width="345" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="InZ-kI-mr7"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="PsC-AG-CtY" firstAttribute="top" secondItem="5Ui-R7-9Ei" secondAttribute="bottom" constant="15" id="04m-1C-EoN"/>
+                            <constraint firstAttribute="trailing" secondItem="5Ui-R7-9Ei" secondAttribute="trailing" constant="15" id="7Ln-QY-t2t"/>
+                            <constraint firstItem="xa0-9p-anE" firstAttribute="leading" secondItem="smz-q3-hxb" secondAttribute="leading" constant="15" id="EQb-9x-Gx8"/>
+                            <constraint firstItem="xa0-9p-anE" firstAttribute="top" secondItem="va3-ob-jKx" secondAttribute="bottom" constant="15" id="Lxy-DW-JiC"/>
+                            <constraint firstItem="5Ui-R7-9Ei" firstAttribute="top" secondItem="xa0-9p-anE" secondAttribute="bottom" constant="15" id="TdY-SB-6ww"/>
+                            <constraint firstItem="va3-ob-jKx" firstAttribute="leading" secondItem="smz-q3-hxb" secondAttribute="leading" constant="15" id="XiX-RA-gdO"/>
+                            <constraint firstAttribute="trailing" secondItem="xa0-9p-anE" secondAttribute="trailing" constant="15" id="jNY-K1-Oiu"/>
+                            <constraint firstAttribute="trailing" secondItem="va3-ob-jKx" secondAttribute="trailing" constant="15" id="qlR-sW-8sR"/>
+                            <constraint firstItem="5Ui-R7-9Ei" firstAttribute="leading" secondItem="smz-q3-hxb" secondAttribute="leading" constant="15" id="sHa-Bb-BeR"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Remember Me" id="biy-L3-bEi">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="VSg-Tu-edU">
