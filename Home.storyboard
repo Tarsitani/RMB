@@ -50,10 +50,10 @@
                                             <rect key="frame" x="0.0" y="0.0" width="70" height="70"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JDv-nf-m4Q">
-                                                    <rect key="frame" x="3" y="3" width="65" height="65"/>
+                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JDv-nf-m4Q">
+                                                    <rect key="frame" x="-2162" y="-3744" width="4395" height="7559"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <state key="normal" title="button_remember"/>
+                                                    <state key="normal" title="button_remember" image="this" backgroundImage="this"/>
                                                     <connections>
                                                         <action selector="rememberObjectButton:" destination="2vR-KO-pqZ" eventType="touchUpInside" id="OKJ-gd-Hs4"/>
                                                     </connections>
@@ -78,9 +78,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="LocalizationCollectionView" destination="5Ui-R7-9Ei" id="9wQ-Ow-DsA"/>
-                        <outlet property="LocalizationScreenCollectionView" destination="5Ui-R7-9Ei" id="yes-3a-FeW"/>
-                        <outlet property="choosenObjects" destination="5Ui-R7-9Ei" id="q3N-Dc-cnT"/>
+                        <outlet property="LocalizationScreenCollectionView" destination="5Ui-R7-9Ei" id="cIh-0P-Bt0"/>
                         <outlet property="objectNameLabel" destination="va3-ob-jKx" id="bi8-de-Agh"/>
                     </connections>
                 </viewController>
@@ -123,23 +121,26 @@
                                             <rect key="frame" x="0.0" y="0.0" width="70" height="70"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rxE-Li-Hnm">
-                                                    <rect key="frame" x="2" y="2" width="65" height="65"/>
+                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rxE-Li-Hnm">
+                                                    <rect key="frame" x="0.0" y="0.0" width="70" height="70"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <state key="normal" title="button_object"/>
+                                                    <state key="normal" title="button_object" image="this" backgroundImage="this"/>
                                                     <connections>
-                                                        <action selector="objectImageButton:" destination="wHb-Zv-twZ" eventType="touchUpInside" id="JQ6-kL-JeM"/>
-                                                        <action selector="objectImageButtons:" destination="3p1-h2-O8w" eventType="touchUpInside" id="c2V-aB-Lb4"/>
+                                                        <action selector="clickImageButton:" destination="wHb-Zv-twZ" eventType="touchUpInside" id="fZC-ma-CkJ"/>
                                                     </connections>
                                                 </button>
                                             </subviews>
                                         </view>
                                         <size key="customSize" width="70" height="70"/>
                                         <connections>
-                                            <outlet property="objectImageButton" destination="rxE-Li-Hnm" id="CfD-Oq-yUS"/>
+                                            <outlet property="objectImageButton" destination="rxE-Li-Hnm" id="EOH-Kr-acw"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="3p1-h2-O8w" id="mkA-1O-uf7"/>
+                                    <outlet property="delegate" destination="3p1-h2-O8w" id="O16-30-R2s"/>
+                                </connections>
                             </collectionView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -153,7 +154,6 @@
                     </navigationItem>
                     <connections>
                         <outlet property="ButtonScreenCollectionView" destination="t4r-M8-lJ5" id="kwL-69-Gnm"/>
-                        <outlet property="objectImageButton" destination="rxE-Li-Hnm" id="qe6-nE-fIv"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZTM-E1-wIk" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -200,4 +200,7 @@
             <point key="canvasLocation" x="-1030" y="97"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="this" width="4251" height="7559"/>
+    </resources>
 </document>

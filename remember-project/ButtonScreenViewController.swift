@@ -8,8 +8,13 @@
 
 import UIKit
 
-class ButtonScreenViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
 
+
+class ButtonScreenViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, AddItemDelegate {
+
+    
+    
+    
     @IBOutlet weak var ButtonScreenCollectionView: UICollectionView!
     
     var objectsImages = ListObjectsMenu()
@@ -17,19 +22,6 @@ class ButtonScreenViewController: UIViewController, UICollectionViewDelegate, UI
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
-        //Started to set the navigation bar settings
-        self.navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.white] //Turn the title white
-        self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default) //Make the background cover the bar
-        self.navigationController?.navigationBar.shadowImage = UIImage()
-        self.navigationController?.navigationBar.isTranslucent = true //Turn translucide the bar
-        self.navigationItem.backBarButtonItem = UIBarButtonItem(title:"", style:.plain, target:nil, action:nil) //Hide the text in the back button
-        self.navigationController?.navigationBar.tintColor = UIColor.white; //Turn all the buttons white
-        //Finish to set the navigation bar settings
-        
-        self.ButtonScreenCollectionView.delegate = self
-        self.ButtonScreenCollectionView.dataSource = self
         
     }
 
@@ -55,16 +47,30 @@ class ButtonScreenViewController: UIViewController, UICollectionViewDelegate, UI
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "object_to_choose",  for: indexPath) as! ButtonScreenCollectionViewCell
+        
+        print("cade?")
+        
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "remember_cell",  for: indexPath) as! ButtonScreenCollectionViewCell
         
         //set images in collectionView while you have them to show
         
         cell.objectImageButton.setImage(UIImage(named: objectsImages.getObjectName(indexPath: indexPath.row)), for: UIControlState.normal)
         
+        cell.objectImageButton.tag = indexPath.row
+        
+        cell.delegate = self
+        
+        
+        print(objectsImages.getObjectName(indexPath: indexPath.row))
         
         cell.layer.cornerRadius = 8
         
         return cell
+    }
+    
+    func addItem(id: Int) {
+       // self.navigationController?.popViewController(animated: true)
+        print("mamae estou na collectionView com indice \(id)")
     }
     
 
