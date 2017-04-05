@@ -22,12 +22,9 @@ class ButtonScreenViewController: UIViewController, UICollectionViewDelegate, UI
     
     override func viewDidLoad() {
         super.viewDidLoad()
-<<<<<<< HEAD
-=======
         
         self.ButtonScreenCollectionView.delegate = self
         self.ButtonScreenCollectionView.dataSource = self
->>>>>>> 4a8b54a958eafc6944ea97dd436c1853d693dbca
         
     }
 
@@ -74,25 +71,23 @@ class ButtonScreenViewController: UIViewController, UICollectionViewDelegate, UI
         return cell
     }
     
-<<<<<<< HEAD
     func addItem(id: Int) {
        // self.navigationController?.popViewController(animated: true)
         print("mamae estou na collectionView com indice \(id)")
     }
     
 
-    /*
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
-=======
+    }
+    
     @IBAction func DoneWasPressed(_ sender: UIBarButtonItem) {
         
         self.performSegue(withIdentifier: "goBack", sender: self)
->>>>>>> 4a8b54a958eafc6944ea97dd436c1853d693dbca
     }
     
 

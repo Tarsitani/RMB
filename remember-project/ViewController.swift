@@ -13,10 +13,6 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-<<<<<<< HEAD
-        
-=======
->>>>>>> 4a8b54a958eafc6944ea97dd436c1853d693dbca
     }
 
     override func didReceiveMemoryWarning() {

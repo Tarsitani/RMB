@@ -166,11 +166,8 @@
                     </navigationItem>
                     <connections>
                         <outlet property="ButtonScreenCollectionView" destination="t4r-M8-lJ5" id="kwL-69-Gnm"/>
-<<<<<<< HEAD
-=======
                         <outlet property="objectImageButton" destination="rxE-Li-Hnm" id="qe6-nE-fIv"/>
                         <segue destination="hHb-R5-jcp" kind="unwind" identifier="goBack" unwindAction="unwideToBeginWithSegue:" id="pTo-NO-R9H"/>
->>>>>>> 4a8b54a958eafc6944ea97dd436c1853d693dbca
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZTM-E1-wIk" userLabel="First Responder" sceneMemberID="firstResponder"/>
