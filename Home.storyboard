@@ -12,7 +12,7 @@
         <!--Remember Me-->
         <scene sceneID="Hi1-SR-uwF">
             <objects>
-                <viewController id="2vR-KO-pqZ" customClass="LocalizationScreenViewController" customModule="remember_project" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="2vR-KO-pqZ" customClass="LocalizationScreenViewController" customModule="remember_project" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="b7J-tH-SeU"/>
                         <viewControllerLayoutGuide type="bottom" id="PsC-AG-CtY"/>
@@ -27,7 +27,7 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="70" id="zJH-a7-n5S"/>
                                 </constraints>
-                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="XCR-He-R8w">
+                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="40" minimumInteritemSpacing="0.0" id="XCR-He-R8w">
                                     <size key="itemSize" width="70" height="70"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
@@ -36,13 +36,13 @@
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="remember_object" id="ITJ-bZ-tWT" customClass="LocalizationScreenCollectionViewCell" customModule="remember_project" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="70" height="70"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="0.0" y="0.0" width="70" height="70"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JDv-nf-m4Q">
-                                                    <rect key="frame" x="-2162" y="-3744" width="4395" height="7559"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="70" height="70"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <state key="normal" title="button_remember" image="this" backgroundImage="this"/>
                                                     <connections>
@@ -51,7 +51,7 @@
                                                 </button>
                                             </subviews>
                                         </view>
-                                        <size key="customSize" width="70" height="70"/>
+                                        <color key="backgroundColor" red="0.50870768229166663" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <connections>
                                             <outlet property="rememberScreenButton" destination="JDv-nf-m4Q" id="8YM-0M-0Ku"/>
                                         </connections>
@@ -204,10 +204,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZP7-PR-aTP">
-                                <rect key="frame" x="59" y="263.5" width="257" height="140"/>
+                                <rect key="frame" x="62.5" y="263.5" width="250" height="140"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cancel the Operation" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="M6z-aR-A8M">
-                                        <rect key="frame" x="0.0" y="0.0" width="257" height="46"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="250" height="46"/>
                                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="46" id="K3E-9O-DMW"/>
@@ -218,7 +218,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="N9U-iC-taj">
-                                        <rect key="frame" x="0.0" y="47" width="257" height="46"/>
+                                        <rect key="frame" x="0.0" y="47" width="250" height="46"/>
                                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="46" id="7Su-Hs-uon"/>
@@ -230,7 +230,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wxF-gB-SX1">
-                                        <rect key="frame" x="0.0" y="94" width="257" height="46"/>
+                                        <rect key="frame" x="0.0" y="94" width="250" height="46"/>
                                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="46" id="2bJ-hz-Rm8"/>
@@ -247,8 +247,8 @@
                                     <constraint firstItem="M6z-aR-A8M" firstAttribute="leading" secondItem="ZP7-PR-aTP" secondAttribute="leading" id="1kn-VG-4g5"/>
                                     <constraint firstItem="M6z-aR-A8M" firstAttribute="leading" secondItem="ZP7-PR-aTP" secondAttribute="leading" id="2Oz-hO-ei3"/>
                                     <constraint firstAttribute="trailing" secondItem="M6z-aR-A8M" secondAttribute="trailing" id="8Ar-nv-4xf"/>
+                                    <constraint firstAttribute="width" constant="250" id="AQT-VS-kbG"/>
                                     <constraint firstAttribute="trailing" secondItem="N9U-iC-taj" secondAttribute="trailing" id="CnC-uC-rLa"/>
-                                    <constraint firstAttribute="width" constant="257" id="EtH-Lp-FaV"/>
                                     <constraint firstAttribute="height" constant="140" id="KkW-q6-CUi"/>
                                     <constraint firstItem="wxF-gB-SX1" firstAttribute="leading" secondItem="ZP7-PR-aTP" secondAttribute="leading" id="Nnr-Hy-ZWz"/>
                                     <constraint firstItem="N9U-iC-taj" firstAttribute="leading" secondItem="ZP7-PR-aTP" secondAttribute="leading" id="dXW-9c-0x3"/>
@@ -264,7 +264,7 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                         </subviews>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.24917059080000001" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.5" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="ZP7-PR-aTP" firstAttribute="centerX" secondItem="xG4-8r-yy5" secondAttribute="centerX" id="KAP-aT-dBy"/>
                             <constraint firstItem="ZP7-PR-aTP" firstAttribute="centerY" secondItem="xG4-8r-yy5" secondAttribute="centerY" id="fcq-GN-w0F"/>
