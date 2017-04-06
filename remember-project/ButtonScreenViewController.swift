@@ -84,12 +84,4 @@ class ButtonScreenViewController: UIViewController, UICollectionViewDelegate, UI
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
     }
-    
-    
-    //Go back to the inicial screen (LocalizationScreenViewController
-    @IBAction func DoneWasPressed(_ sender: UIBarButtonItem) {
-        self.performSegue(withIdentifier: "goBack", sender: self)
-    }
-    
-
 }

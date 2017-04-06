@@ -57,10 +57,7 @@ class LocalizationScreenViewController: UIViewController, UICollectionViewDelega
         
         return cell
     }
-    
-    //Set this screen as the return for all other screens who uses "unwindToBegin"
-    @IBAction func unwideToBegin(segue: UIStoryboardSegue) {
-    }
+
 }
 
 
