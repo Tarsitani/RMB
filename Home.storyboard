@@ -188,20 +188,114 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Choose Your Itens" id="vhm-v6-ybD">
-                        <barButtonItem key="leftBarButtonItem" systemItem="trash" id="Q5L-3J-Dbm"/>
+                        <barButtonItem key="leftBarButtonItem" systemItem="trash" id="Q5L-3J-Dbm">
+                            <connections>
+                                <segue destination="r2f-Sm-ewz" kind="presentation" id="pBC-gC-w9p"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="done" id="4rK-7p-nZA">
                             <connections>
-                                <action selector="DoneWasPressed:" destination="3p1-h2-O8w" id="Ka9-y8-rDS"/>
+                                <action selector="unwindToHome:" destination="3p1-h2-O8w" id="GoV-Ok-baL"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="ButtonScreenCollectionView" destination="t4r-M8-lJ5" id="kwL-69-Gnm"/>
+                        <segue destination="oMV-Nu-Vr0" kind="unwind" identifier="goBack" unwindAction="unwindToLocalizationWithSegue:" id="2qW-Bz-Wfr"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZTM-E1-wIk" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="oMV-Nu-Vr0" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="652" y="-500.59970014992507"/>
+        </scene>
+        <!--Cancel Popup View Controller-->
+        <scene sceneID="w1w-fV-4eg">
+            <objects>
+                <viewController id="r2f-Sm-ewz" customClass="CancelPopupViewController" customModule="remember_project" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="1Qa-Pg-ONS"/>
+                        <viewControllerLayoutGuide type="bottom" id="gU2-vL-nM6"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Yok-EO-UVa">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2EY-yr-4bo">
+                                <rect key="frame" x="59" y="263.5" width="257" height="140"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cancel the Operation" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dg3-e2-fqK">
+                                        <rect key="frame" x="0.0" y="0.0" width="257" height="46"/>
+                                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="46" id="OGC-xI-tKP"/>
+                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="46" id="fhj-vP-dAs"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8L9-17-uEe">
+                                        <rect key="frame" x="0.0" y="47" width="257" height="46"/>
+                                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="46" id="aUe-DF-jlT"/>
+                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="46" id="fMB-hk-FmJ"/>
+                                        </constraints>
+                                        <state key="normal" title="Yes"/>
+                                        <connections>
+                                            <action selector="unwindToHome:" destination="r2f-Sm-ewz" eventType="touchUpInside" id="Gwp-Rj-eXJ"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dYj-eJ-JAt">
+                                        <rect key="frame" x="0.0" y="94" width="257" height="46"/>
+                                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="46" id="GoV-9t-utF"/>
+                                            <constraint firstAttribute="height" constant="46" id="Y5U-t1-ak5"/>
+                                        </constraints>
+                                        <state key="normal" title="No"/>
+                                        <connections>
+                                            <action selector="dismissPopUp:" destination="r2f-Sm-ewz" eventType="touchUpInside" id="HOR-yE-raE"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" red="0.7843137255" green="0.7843137255" blue="0.7843137255" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstItem="dYj-eJ-JAt" firstAttribute="top" secondItem="8L9-17-uEe" secondAttribute="bottom" constant="1" id="0ol-5I-HYz"/>
+                                    <constraint firstItem="8L9-17-uEe" firstAttribute="leading" secondItem="2EY-yr-4bo" secondAttribute="leading" id="72f-M2-b3a"/>
+                                    <constraint firstItem="dYj-eJ-JAt" firstAttribute="leading" secondItem="2EY-yr-4bo" secondAttribute="leading" id="Bg8-dO-sQI"/>
+                                    <constraint firstItem="Dg3-e2-fqK" firstAttribute="leading" secondItem="2EY-yr-4bo" secondAttribute="leading" id="CDQ-Dn-8ha"/>
+                                    <constraint firstAttribute="trailing" secondItem="Dg3-e2-fqK" secondAttribute="trailing" id="CYf-Tu-M8p"/>
+                                    <constraint firstItem="Dg3-e2-fqK" firstAttribute="top" secondItem="2EY-yr-4bo" secondAttribute="top" id="H7P-8W-KYA"/>
+                                    <constraint firstItem="Dg3-e2-fqK" firstAttribute="leading" secondItem="2EY-yr-4bo" secondAttribute="leading" id="MAT-8E-hYS"/>
+                                    <constraint firstAttribute="trailing" secondItem="8L9-17-uEe" secondAttribute="trailing" id="jzM-G9-Ygn"/>
+                                    <constraint firstItem="8L9-17-uEe" firstAttribute="top" secondItem="Dg3-e2-fqK" secondAttribute="bottom" constant="1" id="mjH-0d-HId"/>
+                                    <constraint firstAttribute="height" constant="140" id="o95-Cn-D59"/>
+                                    <constraint firstAttribute="width" constant="257" id="qpm-41-r0C"/>
+                                    <constraint firstAttribute="trailing" secondItem="dYj-eJ-JAt" secondAttribute="trailing" id="srr-60-gmX"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.24917059080000001" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="2EY-yr-4bo" firstAttribute="centerX" secondItem="Yok-EO-UVa" secondAttribute="centerX" id="0LM-OZ-rG9"/>
+                            <constraint firstItem="2EY-yr-4bo" firstAttribute="centerY" secondItem="Yok-EO-UVa" secondAttribute="centerY" id="tCU-Qv-BgW"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <segue destination="ybS-Fz-81v" kind="unwind" identifier="goBack" unwindAction="unwindToLocalizationWithSegue:" id="Lnu-dc-mIC"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="TgU-xq-cPm" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="ybS-Fz-81v" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="1402" y="-501"/>
         </scene>
         <!--Items-->
         <scene sceneID="LiD-no-d3U">
