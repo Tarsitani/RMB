@@ -8,7 +8,7 @@
 
 import UIKit
 
-class LocalizationScreenViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
+class LocalizationScreenViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, PressedButtonNameDelegate {
     
     @IBOutlet weak var LocalizationScreenCollectionView: UICollectionView!
     
@@ -36,15 +36,16 @@ class LocalizationScreenViewController: UIViewController, UICollectionViewDelega
     }
     
     //When the button of locationScreen is pressed the name of the object will show
-    @IBAction func rememberObjectButton(_ sender: UIButton) {
+    func pressedButtonName(id: Int) {
         
-        let objectIndex = sender.tag
-        let objectName = objectsImages.getObjectName(indexPath: objectIndex)
+        let objectName = objectsImages.getObjectName(indexPath: id)
         
         self.objectNameLabel.text = String("NAME: \(objectName)")
         
-        //self.LocalizationScreenCollectionView.reloadData()
+
     }
+        
+                //self.LocalizationScreenCollectionView.reloadData()
     
     
     //take the images from reference and add your respective cell to the collectionView
@@ -52,6 +53,9 @@ class LocalizationScreenViewController: UIViewController, UICollectionViewDelega
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "remember_object",  for: indexPath) as! LocalizationScreenCollectionViewCell
         
         cell.rememberScreenButton.setImage(UIImage(named: objectsImages.getObjectName(indexPath: indexPath.row)), for: UIControlState.normal)
+        cell.index = indexPath.row
+        
+        cell.delegate = self
         
         cell.layer.cornerRadius = 8
         

@@ -34,17 +34,6 @@ class ButtonScreenViewController: UIViewController, UICollectionViewDelegate, UI
     }
     
     
-    @IBAction func objectImageButtons(_ sender: UIButton) {
-        
-        //get the button tag and use it as an index to finde what image it refers
-        let imageIndex = sender.tag
-        let objectName = objectsImages.getObjectName(indexPath: imageIndex)
-        
-        //add the image to the object list on localizationScreen
-        objectToShow.addItem(objectPressed: objectName)
-        
-    }
-    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return objectsImages.getAllObjectsSize()
     }
@@ -74,6 +63,13 @@ class ButtonScreenViewController: UIViewController, UICollectionViewDelegate, UI
     func addItem(id: Int) {
        // self.navigationController?.popViewController(animated: true)
         print("mamae estou na collectionView com indice \(id)")
+        
+        //get the button tag and use it as an index to finde what image it refers
+        let objectName = objectsImages.getObjectName(indexPath: id)
+        
+        //add the image to the object list on localizationScreen
+        objectToShow.addItem(objectPressed: objectName)
+        
     }
     
 
