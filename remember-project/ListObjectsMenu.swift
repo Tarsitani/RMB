@@ -26,7 +26,7 @@ class ListObjectsMenu: NSObject {
     }
     
     //list of objects that will appear in buttonScreen
-    var allObjects = [ObjectItem(index: 0, name: "deer.jpg"), ObjectItem(index: 1, name: "Doreta")]
+    var allObjects = [ObjectItem(index: 0, name: "01.jpg"), ObjectItem(index: 1, name: "02"), ObjectItem(index: 2, name: "03"), ObjectItem(index: 3, name: "04"), ObjectItem(index: 4, name: "05"), ObjectItem(index: 5, name: "06"), ObjectItem(index: 6, name: "07"), ObjectItem(index: 7, name: "08"), ObjectItem(index: 8, name: "09"), ObjectItem(index: 9, name: "10"), ObjectItem(index: 10, name: "11"), ObjectItem(index: 11, name: "12"), ObjectItem(index: 12, name: "13"), ObjectItem(index: 13, name: "14"), ObjectItem(index: 14, name: "15")]
     
     
     func getObjectName(indexPath: Int) -> String{
