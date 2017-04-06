@@ -17,10 +17,12 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <color key="tintColor" red="0.34509803921568627" green="0.33725490196078434" blue="0.83921568627450982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="selectedImageTintColor" red="0.34509803921568627" green="0.33725490196078434" blue="0.83921568627450982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </tabBar>
                     <connections>
                         <segue destination="2vR-KO-pqZ" kind="relationship" relationship="viewControllers" id="Ufp-Hc-cf1"/>
-                        <segue destination="3p1-h2-O8w" kind="relationship" relationship="viewControllers" id="2OR-re-HBl"/>
+                        <segue destination="nJo-HS-cZj" kind="relationship" relationship="viewControllers" id="2OR-re-HBl"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xHj-Io-r4h" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -106,9 +108,7 @@
                             <constraint firstItem="5Ui-R7-9Ei" firstAttribute="leading" secondItem="smz-q3-hxb" secondAttribute="leading" constant="15" id="sHa-Bb-BeR"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" systemItem="favorites" id="BLF-Ca-ncX">
-                        <inset key="imageInsets" minX="120" minY="120" maxX="120" maxY="120"/>
-                    </tabBarItem>
+                    <tabBarItem key="tabBarItem" image="map" selectedImage="map" id="BLF-Ca-ncX"/>
                     <navigationItem key="navigationItem" title="Remember Me" id="biy-L3-bEi">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="VSg-Tu-edU"/>
                     </navigationItem>
@@ -134,11 +134,11 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="uaZ-0T-7Qw">
-                                <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                                <rect key="frame" x="0.0" y="64" width="375" height="44"/>
                                 <textInputTraits key="textInputTraits"/>
                             </searchBar>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="t4r-M8-lJ5">
-                                <rect key="frame" x="10" y="74" width="355" height="534"/>
+                                <rect key="frame" x="10" y="118" width="355" height="490"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="20" minimumInteritemSpacing="20" id="tH9-7N-yDr">
                                     <size key="itemSize" width="70" height="70"/>
@@ -187,11 +187,8 @@
                             <constraint firstItem="uaZ-0T-7Qw" firstAttribute="top" secondItem="VXy-h8-0V6" secondAttribute="bottom" id="pNY-Ip-DRQ"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" systemItem="history" id="TTF-Z0-elL">
-                        <inset key="imageInsets" minX="120" minY="120" maxX="120" maxY="120"/>
-                    </tabBarItem>
                     <navigationItem key="navigationItem" title="Choose Your Itens" id="vhm-v6-ybD">
-                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="POd-Z5-hRh"/>
+                        <barButtonItem key="leftBarButtonItem" systemItem="trash" id="Q5L-3J-Dbm"/>
                         <barButtonItem key="rightBarButtonItem" systemItem="done" id="4rK-7p-nZA">
                             <connections>
                                 <action selector="DoneWasPressed:" destination="3p1-h2-O8w" id="Ka9-y8-rDS"/>
@@ -204,10 +201,31 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZTM-E1-wIk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-286" y="-500"/>
+            <point key="canvasLocation" x="652" y="-500.59970014992507"/>
+        </scene>
+        <!--Items-->
+        <scene sceneID="LiD-no-d3U">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="nJo-HS-cZj" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Items" image="items" selectedImage="items" id="TTF-Z0-elL"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Xak-mY-OdH">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="3p1-h2-O8w" kind="relationship" relationship="rootViewController" id="Zgw-D6-boT"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9Mo-wx-XfY" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-287.19999999999999" y="-500.59970014992507"/>
         </scene>
     </scenes>
     <resources>
+        <image name="items" width="25" height="25"/>
+        <image name="map" width="25" height="25"/>
         <image name="this" width="4251" height="7559"/>
     </resources>
 </document>
