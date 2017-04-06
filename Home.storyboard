@@ -65,7 +65,7 @@
                                                     <color key="tintColor" red="0.99194461107254028" green="0.99615627527236938" blue="0.99600595235824585" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <state key="normal" title="button_remember" image="this"/>
                                                     <connections>
-                                                        <action selector="rememberObjectButton:" destination="2vR-KO-pqZ" eventType="touchUpInside" id="OKJ-gd-Hs4"/>
+                                                        <action selector="toRemeberButton:" destination="ITJ-bZ-tWT" eventType="touchUpInside" id="5eq-1J-HY4"/>
                                                     </connections>
                                                 </button>
                                             </subviews>
