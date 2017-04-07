@@ -18,14 +18,12 @@ class ButtonScreenViewController: UIViewController, UICollectionViewDelegate, UI
     @IBOutlet weak var ButtonScreenCollectionView: UICollectionView!
     
     var objectsImages = ListObjectsMenu()
-    var objectToShow = ObjectListOnLocalizationScreen()
+    var objectToShow = [ObjectListOnLocalizationScreen]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         self.ButtonScreenCollectionView.delegate = self
         self.ButtonScreenCollectionView.dataSource = self
-        
     }
 
     override func didReceiveMemoryWarning() {
@@ -39,37 +37,27 @@ class ButtonScreenViewController: UIViewController, UICollectionViewDelegate, UI
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        
-        print("cade?")
-        
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "remember_cell",  for: indexPath) as! ButtonScreenCollectionViewCell
         
         //set images in collectionView while you have them to show
-        
         cell.objectImageButton.setImage(UIImage(named: objectsImages.getObjectName(indexPath: indexPath.row)), for: UIControlState.normal)
         
         cell.objectImageButton.tag = indexPath.row
-        
         cell.delegate = self
-        
-        
-        print(objectsImages.getObjectName(indexPath: indexPath.row))
-        
         cell.layer.cornerRadius = 8
-        
         return cell
     }
     
     func addItem(id: Int) {
-       // self.navigationController?.popViewController(animated: true)
-        print("mamae estou na collectionView com indice \(id)")
-        
-        //get the button tag and use it as an index to finde what image it refers
+        //get the button tag and use it as an index to find what image it refers
         let objectName = objectsImages.getObjectName(indexPath: id)
-        
         //add the image to the object list on localizationScreen
-        objectToShow.addItem(objectPressed: objectName)
+        let newObject = objectToShow(objectName: objectName)
         
+        objectToShow.append(newObject)
+        //objectToShow.addItem(objectPressed: objectName)
+        
+        print(objectToShow(name: id))
     }
     
 
@@ -78,6 +66,8 @@ class ButtonScreenViewController: UIViewController, UICollectionViewDelegate, UI
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+        // Pass the selected object to the new view controller
+        
+        
     }
 }
