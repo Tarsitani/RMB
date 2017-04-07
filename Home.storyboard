@@ -136,6 +136,10 @@
                             <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="uaZ-0T-7Qw">
                                 <rect key="frame" x="0.0" y="64" width="375" height="44"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <scopeButtonTitles>
+                                    <string>Title</string>
+                                    <string>Title</string>
+                                </scopeButtonTitles>
                             </searchBar>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="t4r-M8-lJ5">
                                 <rect key="frame" x="10" y="118" width="355" height="490"/>
@@ -188,9 +192,9 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Choose Your Itens" id="vhm-v6-ybD">
-                        <barButtonItem key="leftBarButtonItem" systemItem="trash" id="Q5L-3J-Dbm">
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="Q5L-3J-Dbm">
                             <connections>
-                                <segue destination="r2f-Sm-ewz" kind="presentation" id="pBC-gC-w9p"/>
+                                <segue destination="r2f-Sm-ewz" kind="presentation" id="Niq-5Y-qsz"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="done" id="4rK-7p-nZA">
@@ -212,7 +216,7 @@
         <!--Cancel Popup View Controller-->
         <scene sceneID="w1w-fV-4eg">
             <objects>
-                <viewController id="r2f-Sm-ewz" customClass="CancelPopupViewController" customModule="remember_project" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController modalTransitionStyle="crossDissolve" modalPresentationStyle="overFullScreen" id="r2f-Sm-ewz" customClass="CancelPopupViewController" customModule="remember_project" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="1Qa-Pg-ONS"/>
                         <viewControllerLayoutGuide type="bottom" id="gU2-vL-nM6"/>
@@ -282,7 +286,7 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                         </subviews>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.24917059080000001" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.5" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="2EY-yr-4bo" firstAttribute="centerX" secondItem="Yok-EO-UVa" secondAttribute="centerX" id="0LM-OZ-rG9"/>
                             <constraint firstItem="2EY-yr-4bo" firstAttribute="centerY" secondItem="Yok-EO-UVa" secondAttribute="centerY" id="tCU-Qv-BgW"/>
