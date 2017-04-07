@@ -16,6 +16,7 @@
 		9171472F1E9296A200D2CDE7 /* LocalizationScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9171472E1E9296A200D2CDE7 /* LocalizationScreenViewController.swift */; };
 		917147311E929BB900D2CDE7 /* NavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 917147301E929BB900D2CDE7 /* NavigationController.swift */; };
 		917147331E929FD100D2CDE7 /* ListObjectsMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 917147321E929FD100D2CDE7 /* ListObjectsMenu.swift */; };
+		AE1B3C331E97DB4B0066FEB8 /* MapScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE1B3C321E97DB4B0066FEB8 /* MapScreenViewController.swift */; };
 		AE4049B61E96C2A3001EFB46 /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE4049B51E96C2A3001EFB46 /* TabBarViewController.swift */; };
 		AE4049B81E96DEA8001EFB46 /* CancelPopupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE4049B71E96DEA8001EFB46 /* CancelPopupViewController.swift */; };
 		AE5056EC1E8ED7A500A7FA3A /* ButtonScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE5056EB1E8ED7A500A7FA3A /* ButtonScreenViewController.swift */; };
@@ -34,6 +35,7 @@
 		9171472E1E9296A200D2CDE7 /* LocalizationScreenViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocalizationScreenViewController.swift; sourceTree = "<group>"; };
 		917147301E929BB900D2CDE7 /* NavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationController.swift; sourceTree = "<group>"; };
 		917147321E929FD100D2CDE7 /* ListObjectsMenu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListObjectsMenu.swift; sourceTree = "<group>"; };
+		AE1B3C321E97DB4B0066FEB8 /* MapScreenViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapScreenViewController.swift; sourceTree = "<group>"; };
 		AE4049B51E96C2A3001EFB46 /* TabBarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
 		AE4049B71E96DEA8001EFB46 /* CancelPopupViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CancelPopupViewController.swift; sourceTree = "<group>"; };
 		AE5056EB1E8ED7A500A7FA3A /* ButtonScreenViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ButtonScreenViewController.swift; sourceTree = "<group>"; };
@@ -90,6 +92,7 @@
 				9171472E1E9296A200D2CDE7 /* LocalizationScreenViewController.swift */,
 				AE5056EB1E8ED7A500A7FA3A /* ButtonScreenViewController.swift */,
 				AE4049B71E96DEA8001EFB46 /* CancelPopupViewController.swift */,
+				AE1B3C321E97DB4B0066FEB8 /* MapScreenViewController.swift */,
 			);
 			name = ViewController;
 			sourceTree = "<group>";
@@ -180,6 +183,7 @@
 				9171472D1E9293E600D2CDE7 /* LocalizationScreenCollectionViewCell.swift in Sources */,
 				9171472F1E9296A200D2CDE7 /* LocalizationScreenViewController.swift in Sources */,
 				9171472B1E927EB400D2CDE7 /* ObjectListOnLocalizationScreen.swift in Sources */,
+				AE1B3C331E97DB4B0066FEB8 /* MapScreenViewController.swift in Sources */,
 				917147311E929BB900D2CDE7 /* NavigationController.swift in Sources */,
 				AE4049B61E96C2A3001EFB46 /* TabBarViewController.swift in Sources */,
 				912B53DE1E8ED187000896C9 /* ButtonScreenCollectionViewCell.swift in Sources */,
