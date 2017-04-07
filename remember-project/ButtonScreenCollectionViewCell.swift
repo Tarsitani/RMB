@@ -9,19 +9,19 @@
 import UIKit
 
 protocol AddItemDelegate: NSObjectProtocol {
-    func addItem (id: Int)
+    func addItem (title: String)
 }
 
 
 class ButtonScreenCollectionViewCell: UICollectionViewCell {
     
+	var itemTitle: String?
     weak var delegate: AddItemDelegate?
-    
-    
+	
     @IBOutlet weak var objectImageButton: UIButton!
     
     @IBAction func clickImageButton(_ sender: UIButton) {
-        delegate?.addItem(id:sender.tag)
+        delegate?.addItem(title:self.itemTitle!)
     }
     
 }

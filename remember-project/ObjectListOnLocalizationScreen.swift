@@ -27,9 +27,6 @@ struct Object{
 
 class ObjectListOnLocalizationScreen: NSObject {
 	
-    var objectLibrary = ListObjectsMenu()
-	
-	
     //Will be set a list of pressed objects buttons to show on LocalizationScreen
     public private(set) var listOfObjects = [Object]()
     

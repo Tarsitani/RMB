@@ -8,14 +8,18 @@
 
 import UIKit
 
-
+protocol SelectedItemsDelegate:NSObjectProtocol {
+	func appendSelectedItems(selectedItem:Item)
+}
 
 class ButtonScreenViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, AddItemDelegate {
 	
     @IBOutlet weak var ButtonScreenCollectionView: UICollectionView!
     
-    var objectsImages = ListObjectsMenu()
-    var objectToShow = ObjectListOnLocalizationScreen()
+    var itemsDB = ItemsDB()
+	var selectedItems:[Item] = []
+	
+	var delegate: SelectedItemsDelegate?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,26 +34,25 @@ class ButtonScreenViewController: UIViewController, UICollectionViewDelegate, UI
     
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return objectsImages.getAllObjectsSize()
+        return itemsDB.allObjects.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "remember_cell",  for: indexPath) as! ButtonScreenCollectionViewCell
         
         //set images in collectionView while you have them to show
-        cell.objectImageButton.setImage(UIImage(named: objectsImages.getObjectName(indexPath: indexPath.row)), for: UIControlState.normal)
-        
-        cell.objectImageButton.tag = indexPath.row
+		cell.itemTitle = itemsDB.allObjects[indexPath.row].iconTitle!
+        cell.objectImageButton.setImage(UIImage(named: itemsDB.allObjects[indexPath.row].iconTitle!), for: UIControlState.normal)
+		
         cell.delegate = self
         cell.layer.cornerRadius = 8
         return cell
     }
     
-    func addItem(id: Int) {
+    func addItem(title: String) {
         //get the button tag and use it as an index to find what image it refers
-        let objectName = objectsImages.getObjectName(indexPath: id)
-        //add the image to the object list on localizationScreen
-		objectToShow.addItem(id, objectName)
+		//add the image to the object list on localizationScreen
+		delegate?.appendSelectedItems(selectedItem: itemsDB.getItemByIconTitle(title: title)!)
     }
     
 
@@ -59,8 +62,6 @@ class ButtonScreenViewController: UIViewController, UICollectionViewDelegate, UI
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller
-        
-        
     }
     
     @IBAction func unwindToHome(_ sender: UIBarButtonItem) {

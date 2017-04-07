@@ -7,12 +7,22 @@
 //
 
 import UIKit
+import MapKit
+import CoreLocation
+
+protocol sendGeotificationCoordinates:NSObjectProtocol {
+	func sendGeotificationCoordinates(coordinates: CLLocationCoordinate2D)
+}
 
 class MapScreenViewController: UIViewController {
+	
+	var delegate:sendGeotificationCoordinates?
 
+	@IBOutlet weak var mapView: MKMapView!
+	
     override func viewDidLoad() {
-        super.viewDidLoad()
-
+		super.viewDidLoad()
+		let coordinate = mapView.centerCoordinate
         // Do any additional setup after loading the view.
     }
 
