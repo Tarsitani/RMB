@@ -11,14 +11,11 @@ import UIKit
 
 
 class ButtonScreenViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, AddItemDelegate {
-
-    
-    
-    
+	
     @IBOutlet weak var ButtonScreenCollectionView: UICollectionView!
     
     var objectsImages = ListObjectsMenu()
-    var objectToShow = [ObjectListOnLocalizationScreen]()
+    var objectToShow = ObjectListOnLocalizationScreen()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -52,12 +49,7 @@ class ButtonScreenViewController: UIViewController, UICollectionViewDelegate, UI
         //get the button tag and use it as an index to find what image it refers
         let objectName = objectsImages.getObjectName(indexPath: id)
         //add the image to the object list on localizationScreen
-        let newObject = objectToShow(objectName: objectName)
-        
-        objectToShow.append(newObject)
-        //objectToShow.addItem(objectPressed: objectName)
-        
-        print(objectToShow(name: id))
+		objectToShow.addItem(id, objectName)
     }
     
 
