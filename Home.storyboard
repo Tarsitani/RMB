@@ -115,7 +115,7 @@
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="t4r-M8-lJ5">
                                 <rect key="frame" x="10" y="74" width="355" height="534"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="20" minimumInteritemSpacing="20" id="tH9-7N-yDr">
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="30" minimumInteritemSpacing="30" id="tH9-7N-yDr">
                                     <size key="itemSize" width="70" height="70"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
@@ -123,14 +123,14 @@
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="remember_cell" id="wHb-Zv-twZ" customClass="ButtonScreenCollectionViewCell" customModule="remember_project" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="70" height="70"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="30" height="30"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="0.0" y="0.0" width="70" height="70"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="30" height="30"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rxE-Li-Hnm">
-                                                    <rect key="frame" x="0.0" y="0.0" width="70" height="70"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="35" height="35"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <state key="normal" title="button_object" image="this"/>
                                                     <connections>
@@ -139,7 +139,7 @@
                                                 </button>
                                             </subviews>
                                         </view>
-                                        <size key="customSize" width="70" height="70"/>
+                                        <size key="customSize" width="30" height="30"/>
                                         <connections>
                                             <outlet property="objectImageButton" destination="rxE-Li-Hnm" id="EOH-Kr-acw"/>
                                         </connections>
@@ -185,8 +185,6 @@
         <!--Map Screen View Controller-->
         <scene sceneID="YE8-MP-VVI">
             <objects>
-                <exit id="Gki-GB-foU" userLabel="Exit" sceneMemberID="exit"/>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Mql-wu-dhU" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="nYd-XH-VsU" customClass="MapScreenViewController" customModule="remember_project" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="88m-gA-cB4"/>
@@ -223,6 +221,8 @@
                         <segue destination="Gki-GB-foU" kind="unwind" identifier="goBack" unwindAction="unwindToLocalizationWithSegue:" id="xm7-Fg-Xmn"/>
                     </connections>
                 </viewController>
+                <exit id="Gki-GB-foU" userLabel="Exit" sceneMemberID="exit"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Mql-wu-dhU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2337" y="-842"/>
         </scene>
