@@ -70,4 +70,8 @@ class ButtonScreenViewController: UIViewController, UICollectionViewDelegate, UI
         
         
     }
+    
+    @IBAction func unwindToHome(_ sender: UIBarButtonItem) {
+        self.performSegue(withIdentifier: "goBack", sender: self)
+    }
 }

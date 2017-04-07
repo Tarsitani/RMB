@@ -17,10 +17,12 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <color key="tintColor" red="0.34509803921568627" green="0.33725490196078434" blue="0.83921568627450982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="selectedImageTintColor" red="0.34509803921568627" green="0.33725490196078434" blue="0.83921568627450982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </tabBar>
                     <connections>
                         <segue destination="2vR-KO-pqZ" kind="relationship" relationship="viewControllers" id="Ufp-Hc-cf1"/>
-                        <segue destination="3p1-h2-O8w" kind="relationship" relationship="viewControllers" id="2OR-re-HBl"/>
+                        <segue destination="nJo-HS-cZj" kind="relationship" relationship="viewControllers" id="2OR-re-HBl"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xHj-Io-r4h" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -106,9 +108,7 @@
                             <constraint firstItem="5Ui-R7-9Ei" firstAttribute="leading" secondItem="smz-q3-hxb" secondAttribute="leading" constant="15" id="sHa-Bb-BeR"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" systemItem="favorites" id="BLF-Ca-ncX">
-                        <inset key="imageInsets" minX="120" minY="120" maxX="120" maxY="120"/>
-                    </tabBarItem>
+                    <tabBarItem key="tabBarItem" image="map" selectedImage="map" id="BLF-Ca-ncX"/>
                     <navigationItem key="navigationItem" title="Remember Me" id="biy-L3-bEi">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="VSg-Tu-edU"/>
                     </navigationItem>
@@ -134,11 +134,15 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="uaZ-0T-7Qw">
-                                <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                                <rect key="frame" x="0.0" y="64" width="375" height="44"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <scopeButtonTitles>
+                                    <string>Title</string>
+                                    <string>Title</string>
+                                </scopeButtonTitles>
                             </searchBar>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="t4r-M8-lJ5">
-                                <rect key="frame" x="10" y="74" width="355" height="534"/>
+                                <rect key="frame" x="10" y="118" width="355" height="490"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="20" minimumInteritemSpacing="20" id="tH9-7N-yDr">
                                     <size key="itemSize" width="70" height="70"/>
@@ -187,27 +191,139 @@
                             <constraint firstItem="uaZ-0T-7Qw" firstAttribute="top" secondItem="VXy-h8-0V6" secondAttribute="bottom" id="pNY-Ip-DRQ"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" systemItem="history" id="TTF-Z0-elL">
-                        <inset key="imageInsets" minX="120" minY="120" maxX="120" maxY="120"/>
-                    </tabBarItem>
                     <navigationItem key="navigationItem" title="Choose Your Itens" id="vhm-v6-ybD">
-                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="POd-Z5-hRh"/>
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="Q5L-3J-Dbm">
+                            <connections>
+                                <segue destination="r2f-Sm-ewz" kind="presentation" id="Niq-5Y-qsz"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="done" id="4rK-7p-nZA">
                             <connections>
-                                <action selector="DoneWasPressed:" destination="3p1-h2-O8w" id="Ka9-y8-rDS"/>
+                                <action selector="unwindToHome:" destination="3p1-h2-O8w" id="GoV-Ok-baL"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="ButtonScreenCollectionView" destination="t4r-M8-lJ5" id="kwL-69-Gnm"/>
+                        <segue destination="oMV-Nu-Vr0" kind="unwind" identifier="goBack" unwindAction="unwindToLocalizationWithSegue:" id="2qW-Bz-Wfr"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZTM-E1-wIk" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="oMV-Nu-Vr0" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="-286" y="-500"/>
+            <point key="canvasLocation" x="652" y="-500.59970014992507"/>
+        </scene>
+        <!--Cancel Popup View Controller-->
+        <scene sceneID="w1w-fV-4eg">
+            <objects>
+                <viewController modalTransitionStyle="crossDissolve" modalPresentationStyle="overFullScreen" id="r2f-Sm-ewz" customClass="CancelPopupViewController" customModule="remember_project" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="1Qa-Pg-ONS"/>
+                        <viewControllerLayoutGuide type="bottom" id="gU2-vL-nM6"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Yok-EO-UVa">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2EY-yr-4bo">
+                                <rect key="frame" x="59" y="263.5" width="257" height="140"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cancel the Operation" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dg3-e2-fqK">
+                                        <rect key="frame" x="0.0" y="0.0" width="257" height="46"/>
+                                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="46" id="OGC-xI-tKP"/>
+                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="46" id="fhj-vP-dAs"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8L9-17-uEe">
+                                        <rect key="frame" x="0.0" y="47" width="257" height="46"/>
+                                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="46" id="aUe-DF-jlT"/>
+                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="46" id="fMB-hk-FmJ"/>
+                                        </constraints>
+                                        <state key="normal" title="Yes"/>
+                                        <connections>
+                                            <action selector="unwindToHome:" destination="r2f-Sm-ewz" eventType="touchUpInside" id="Gwp-Rj-eXJ"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dYj-eJ-JAt">
+                                        <rect key="frame" x="0.0" y="94" width="257" height="46"/>
+                                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="46" id="GoV-9t-utF"/>
+                                            <constraint firstAttribute="height" constant="46" id="Y5U-t1-ak5"/>
+                                        </constraints>
+                                        <state key="normal" title="No"/>
+                                        <connections>
+                                            <action selector="dismissPopUp:" destination="r2f-Sm-ewz" eventType="touchUpInside" id="HOR-yE-raE"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" red="0.7843137255" green="0.7843137255" blue="0.7843137255" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstItem="dYj-eJ-JAt" firstAttribute="top" secondItem="8L9-17-uEe" secondAttribute="bottom" constant="1" id="0ol-5I-HYz"/>
+                                    <constraint firstItem="8L9-17-uEe" firstAttribute="leading" secondItem="2EY-yr-4bo" secondAttribute="leading" id="72f-M2-b3a"/>
+                                    <constraint firstItem="dYj-eJ-JAt" firstAttribute="leading" secondItem="2EY-yr-4bo" secondAttribute="leading" id="Bg8-dO-sQI"/>
+                                    <constraint firstItem="Dg3-e2-fqK" firstAttribute="leading" secondItem="2EY-yr-4bo" secondAttribute="leading" id="CDQ-Dn-8ha"/>
+                                    <constraint firstAttribute="trailing" secondItem="Dg3-e2-fqK" secondAttribute="trailing" id="CYf-Tu-M8p"/>
+                                    <constraint firstItem="Dg3-e2-fqK" firstAttribute="top" secondItem="2EY-yr-4bo" secondAttribute="top" id="H7P-8W-KYA"/>
+                                    <constraint firstItem="Dg3-e2-fqK" firstAttribute="leading" secondItem="2EY-yr-4bo" secondAttribute="leading" id="MAT-8E-hYS"/>
+                                    <constraint firstAttribute="trailing" secondItem="8L9-17-uEe" secondAttribute="trailing" id="jzM-G9-Ygn"/>
+                                    <constraint firstItem="8L9-17-uEe" firstAttribute="top" secondItem="Dg3-e2-fqK" secondAttribute="bottom" constant="1" id="mjH-0d-HId"/>
+                                    <constraint firstAttribute="height" constant="140" id="o95-Cn-D59"/>
+                                    <constraint firstAttribute="width" constant="257" id="qpm-41-r0C"/>
+                                    <constraint firstAttribute="trailing" secondItem="dYj-eJ-JAt" secondAttribute="trailing" id="srr-60-gmX"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.5" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="2EY-yr-4bo" firstAttribute="centerX" secondItem="Yok-EO-UVa" secondAttribute="centerX" id="0LM-OZ-rG9"/>
+                            <constraint firstItem="2EY-yr-4bo" firstAttribute="centerY" secondItem="Yok-EO-UVa" secondAttribute="centerY" id="tCU-Qv-BgW"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <segue destination="ybS-Fz-81v" kind="unwind" identifier="goBack" unwindAction="unwindToLocalizationWithSegue:" id="Lnu-dc-mIC"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="TgU-xq-cPm" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="ybS-Fz-81v" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="1402" y="-501"/>
+        </scene>
+        <!--Items-->
+        <scene sceneID="LiD-no-d3U">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="nJo-HS-cZj" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Items" image="items" selectedImage="items" id="TTF-Z0-elL"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Xak-mY-OdH">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="3p1-h2-O8w" kind="relationship" relationship="rootViewController" id="Zgw-D6-boT"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9Mo-wx-XfY" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-287.19999999999999" y="-500.59970014992507"/>
         </scene>
     </scenes>
     <resources>
+        <image name="items" width="25" height="25"/>
+        <image name="map" width="25" height="25"/>
         <image name="this" width="4251" height="7559"/>
     </resources>
 </document>

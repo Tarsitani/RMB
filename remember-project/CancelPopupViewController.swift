@@ -2,7 +2,7 @@
 //  CancelPopupViewController.swift
 //  remember-project
 //
-//  Created by Matheus Garcia on 05/04/17.
+//  Created by Matheus Garcia on 06/04/17.
 //  Copyright © 2017 Lucas Tarsitani. All rights reserved.
 //
 
@@ -15,15 +15,28 @@ class CancelPopupViewController: UIViewController {
 
         // Do any additional setup after loading the view.
     }
+
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
+    }
     
-    //Go back to the inicial screen (LocalizationScreenViewController
-    @IBAction func yesWasPressed(_ sender: UIButton) {
+
+    /*
+    // MARK: - Navigation
+
+    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        // Get the new view controller using segue.destinationViewController.
+        // Pass the selected object to the new view controller.
+    }
+    */
+    
+    @IBAction func unwindToHome(_ sender: UIButton) {
         self.performSegue(withIdentifier: "goBack", sender: self)
     }
     
-    //Dimiss the screen and goes back to the ButtonScreenViewController
-    @IBAction func noWasPressed(_ sender: UIButton) {
+    @IBAction func dismissPopUp(_ sender: UIButton) {
         dismiss(animated: true, completion: nil)
     }
-    
 }
