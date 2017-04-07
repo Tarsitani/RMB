@@ -8,7 +8,7 @@
 
 import UIKit
 
-class LocalizationScreenViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
+class LocalizationScreenViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, PressedButtonNameDelegate {
     
     @IBOutlet weak var LocalizationScreenCollectionView: UICollectionView!
     
@@ -16,13 +16,12 @@ class LocalizationScreenViewController: UIViewController, UICollectionViewDelega
     
     //Reference to the image`s data base
     var objectsImages = ListObjectsMenu()
+    var objectToRemeber = ObjectListOnLocalizationScreen()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         self.LocalizationScreenCollectionView.delegate = self
         self.LocalizationScreenCollectionView.dataSource = self
-        
     }
     
     override func didReceiveMemoryWarning() {
@@ -36,23 +35,24 @@ class LocalizationScreenViewController: UIViewController, UICollectionViewDelega
     }
     
     //When the button of locationScreen is pressed the name of the object will show
-    @IBAction func rememberObjectButton(_ sender: UIButton) {
+    func pressedButtonName(id: Int) {
+        let objectName = objectsImages.getObjectName(indexPath: id)
         
-        let objectIndex = sender.tag
-        let objectName = objectsImages.getObjectName(indexPath: objectIndex)
-        
+        objectToRemeber.addItem(objectPressed: objectName)
         self.objectNameLabel.text = String("NAME: \(objectName)")
-        
-        //self.LocalizationScreenCollectionView.reloadData()
     }
-    
     
     //take the images from reference and add your respective cell to the collectionView
     internal func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell{
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "remember_object",  for: indexPath) as! LocalizationScreenCollectionViewCell
         
+        //o vetor com os objetos a serem lembrados deve ser preeenchido na buttonScreen.
+        //depois ser[a enviado pra cá pra ser renderizado
+        
         cell.rememberScreenButton.setImage(UIImage(named: objectsImages.getObjectName(indexPath: indexPath.row)), for: UIControlState.normal)
         
+        cell.index = indexPath.row
+        cell.delegate = self
         cell.layer.cornerRadius = 8
         
         return cell
