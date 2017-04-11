@@ -15,22 +15,26 @@ protocol ObjectListDisplay: NSObjectProtocol {
     
 }
 
+struct Object{
+	var objectName: String
+	var objectIndex: Int
+	
+	init(_ index: Int, _ name: String) {
+		self.objectIndex = index
+		self.objectName = name
+	}
+}
+
 class ObjectListOnLocalizationScreen: NSObject {
-    
-    var objectLibrary = ListObjectsMenu()
-    
-    struct Object{
-        var objectName: String
-    }
-    
+	
     //Will be set a list of pressed objects buttons to show on LocalizationScreen
     public private(set) var listOfObjects = [Object]()
     
     public weak var delegate: ObjectListDisplay?
     
     //Receive from buttonScreen an object, that was pressed, and add it to the listo of objects to be remeber in localizationScreen
-    func addItem(objectPressed: String){
-        let newObject = Object(objectName: objectPressed)
+	func addItem(_ index: Int, _ objectPressed: String){
+		let newObject = Object(index, objectPressed)
         
         listOfObjects.append(newObject)
     }
