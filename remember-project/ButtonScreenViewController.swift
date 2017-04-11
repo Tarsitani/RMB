@@ -40,10 +40,13 @@ class ButtonScreenViewController: UIViewController, UICollectionViewDelegate, UI
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "remember_cell",  for: indexPath) as! ButtonScreenCollectionViewCell
         
+        let item = itemsDB.allObjects[indexPath.row]
+    
         //set images in collectionView while you have them to show
-		cell.itemTitle = itemsDB.allObjects[indexPath.row].iconTitle!
-        cell.objectImageButton.setImage(UIImage(named: itemsDB.allObjects[indexPath.row].iconTitle!), for: UIControlState.normal)
-		
+		cell.itemTitle = item.iconTitle!
+        cell.objectImageButton.setImage(UIImage(named: item.iconTitle!), for: UIControlState.normal)
+        cell.itemName.text = item.iconTitle
+        //cell.itemName.textColor = UIColor.gray
         cell.delegate = self
         cell.layer.cornerRadius = 8
         return cell

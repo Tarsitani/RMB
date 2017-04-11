@@ -18,6 +18,8 @@ class ButtonScreenCollectionViewCell: UICollectionViewCell {
 	var itemTitle: String?
     weak var delegate: AddItemDelegate?
 	
+    @IBOutlet weak var itemName: UILabel!
+    
     @IBOutlet weak var objectImageButton: UIButton!
     
     @IBAction func clickImageButton(_ sender: UIButton) {

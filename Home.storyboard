@@ -43,27 +43,24 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="5Ui-R7-9Ei">
-                                <rect key="frame" x="66" y="533" width="294" height="70"/>
+                                <rect key="frame" x="61" y="507" width="299" height="96"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="70" id="KDw-vy-iFu"/>
-                                </constraints>
-                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="30" minimumInteritemSpacing="0.0" id="XCR-He-R8w">
-                                    <size key="itemSize" width="50" height="50"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="30" minimumInteritemSpacing="3" id="XCR-He-R8w">
+                                    <size key="itemSize" width="50" height="70"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="item_cell" id="ITJ-bZ-tWT" customClass="LocalizationScreenCollectionViewCell" customModule="remember_project" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="10" width="50" height="50"/>
+                                        <rect key="frame" x="0.0" y="13" width="50" height="70"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="50" height="70"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JDv-nf-m4Q">
-                                                    <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                                    <rect key="frame" x="4.9112431739561089" y="2" width="39.999999999999943" height="40"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <color key="tintColor" red="0.99194461107254028" green="0.99615627527236938" blue="0.99600595235824585" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <state key="normal" title="selected_item_button" image="this"/>
@@ -71,17 +68,25 @@
                                                         <action selector="toRemeberButton:" destination="ITJ-bZ-tWT" eventType="touchUpInside" id="5eq-1J-HY4"/>
                                                     </connections>
                                                 </button>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="itemName" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yd4-lq-J1N">
+                                                    <rect key="frame" x="3.548850609132387" y="44" width="42.000000000000057" height="20.999999999999773"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" weight="thin" pointSize="12"/>
+                                                    <color key="textColor" red="0.34509803921568627" green="0.33725490196078434" blue="0.83897154564950982" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                             </subviews>
                                         </view>
                                         <color key="backgroundColor" red="0.99195677042007446" green="0.99622899293899536" blue="0.99192315340042114" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <connections>
+                                            <outlet property="itemName" destination="yd4-lq-J1N" id="Nq9-4G-Rc0"/>
                                             <outlet property="rememberScreenButton" destination="JDv-nf-m4Q" id="8YM-0M-0Ku"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="yE7-Ge-Piv">
-                                <rect key="frame" x="15" y="35" width="345" height="483"/>
+                                <rect key="frame" x="15" y="35" width="345" height="457"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
                                         <integer key="value" value="10"/>
@@ -89,10 +94,7 @@
                                 </userDefinedRuntimeAttributes>
                             </mapView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FbN-gt-VYu">
-                                <rect key="frame" x="15" y="533" width="41" height="70"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="70" id="hHJ-fi-cUh"/>
-                                </constraints>
+                                <rect key="frame" x="15" y="507" width="41" height="96"/>
                                 <fontDescription key="fontDescription" type="system" weight="thin" pointSize="70"/>
                                 <state key="normal" title="+"/>
                                 <connections>
@@ -102,15 +104,17 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="FbN-gt-VYu" firstAttribute="leading" secondItem="smz-q3-hxb" secondAttribute="leading" constant="15" id="3Jy-sr-saJ"/>
-                            <constraint firstItem="PsC-AG-CtY" firstAttribute="top" secondItem="5Ui-R7-9Ei" secondAttribute="bottom" constant="15" id="Bxz-qz-Srp"/>
-                            <constraint firstItem="PsC-AG-CtY" firstAttribute="top" secondItem="FbN-gt-VYu" secondAttribute="bottom" constant="15" id="OEq-7g-M0w"/>
-                            <constraint firstItem="FbN-gt-VYu" firstAttribute="top" secondItem="yE7-Ge-Piv" secondAttribute="bottom" constant="15" id="cH2-zi-Ygm"/>
-                            <constraint firstItem="yE7-Ge-Piv" firstAttribute="leading" secondItem="smz-q3-hxb" secondAttribute="leading" constant="15" id="dlY-z8-NhG"/>
-                            <constraint firstItem="yE7-Ge-Piv" firstAttribute="top" secondItem="b7J-tH-SeU" secondAttribute="bottom" constant="15" id="f2b-3v-14r"/>
-                            <constraint firstAttribute="trailing" secondItem="yE7-Ge-Piv" secondAttribute="trailing" constant="15" id="rFb-Bc-83e"/>
-                            <constraint firstAttribute="trailing" secondItem="5Ui-R7-9Ei" secondAttribute="trailing" constant="15" id="wDU-S1-ygl"/>
-                            <constraint firstItem="5Ui-R7-9Ei" firstAttribute="leading" secondItem="FbN-gt-VYu" secondAttribute="trailing" constant="10" id="yGa-Nt-ydM"/>
+                            <constraint firstAttribute="trailing" secondItem="yE7-Ge-Piv" secondAttribute="trailing" constant="15" id="2jt-nf-cPh"/>
+                            <constraint firstItem="FbN-gt-VYu" firstAttribute="top" secondItem="yE7-Ge-Piv" secondAttribute="bottom" constant="15" id="BaB-du-PtZ"/>
+                            <constraint firstItem="PsC-AG-CtY" firstAttribute="top" secondItem="FbN-gt-VYu" secondAttribute="bottom" constant="15" id="DjY-vs-v82"/>
+                            <constraint firstItem="5Ui-R7-9Ei" firstAttribute="leading" secondItem="FbN-gt-VYu" secondAttribute="trailing" constant="5" id="KgS-1h-s0C"/>
+                            <constraint firstItem="yE7-Ge-Piv" firstAttribute="leading" secondItem="smz-q3-hxb" secondAttribute="leading" constant="15" id="Ov7-Dc-3hf"/>
+                            <constraint firstItem="FbN-gt-VYu" firstAttribute="top" secondItem="yE7-Ge-Piv" secondAttribute="bottom" constant="15" id="SfT-MI-eH6"/>
+                            <constraint firstItem="PsC-AG-CtY" firstAttribute="top" secondItem="5Ui-R7-9Ei" secondAttribute="bottom" constant="15" id="VPt-n5-UaR"/>
+                            <constraint firstItem="yE7-Ge-Piv" firstAttribute="top" secondItem="b7J-tH-SeU" secondAttribute="bottom" constant="15" id="ab3-aD-wnj"/>
+                            <constraint firstItem="FbN-gt-VYu" firstAttribute="leading" secondItem="smz-q3-hxb" secondAttribute="leading" constant="15" id="fkT-b9-chF"/>
+                            <constraint firstAttribute="trailing" secondItem="5Ui-R7-9Ei" secondAttribute="trailing" constant="15" id="o4F-ZN-1VS"/>
+                            <constraint firstItem="5Ui-R7-9Ei" firstAttribute="top" secondItem="yE7-Ge-Piv" secondAttribute="bottom" constant="15" id="szz-w9-FPe"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Map" image="map" selectedImage="map" id="BLF-Ca-ncX"/>
@@ -124,7 +128,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gve-g2-BCg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-287" y="-1309"/>
+            <point key="canvasLocation" x="-287.19999999999999" y="-1309.2953523238382"/>
         </scene>
         <!--Choose Your Itens-->
         <scene sceneID="l9K-hM-S8p">
@@ -141,32 +145,40 @@
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="t4r-M8-lJ5">
                                 <rect key="frame" x="20" y="74" width="335" height="583"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="50" minimumInteritemSpacing="35" id="tH9-7N-yDr">
-                                    <size key="itemSize" width="50" height="50"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="50" minimumInteritemSpacing="10" id="tH9-7N-yDr">
+                                    <size key="itemSize" width="50" height="70"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="remember_cell" id="wHb-Zv-twZ" customClass="ButtonScreenCollectionViewCell" customModule="remember_project" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="30" height="30"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="50" height="70"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="0.0" y="0.0" width="30" height="30"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="50" height="70"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rxE-Li-Hnm">
-                                                    <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                                    <rect key="frame" x="5" y="3" width="40" height="40"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <state key="normal" title="button_object" image="this"/>
                                                     <connections>
                                                         <action selector="clickImageButton:" destination="wHb-Zv-twZ" eventType="touchUpInside" id="fZC-ma-CkJ"/>
                                                     </connections>
                                                 </button>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="itemName" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="d9m-hd-5dC">
+                                                    <rect key="frame" x="3.868269103448938" y="45" width="42" height="21.000000000000114"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" weight="thin" pointSize="12"/>
+                                                    <color key="textColor" red="0.34509803921568627" green="0.33725490196078434" blue="0.83905292585784308" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                             </subviews>
                                         </view>
-                                        <size key="customSize" width="30" height="30"/>
+                                        <size key="customSize" width="50" height="70"/>
                                         <connections>
+                                            <outlet property="itemName" destination="d9m-hd-5dC" id="wcB-dU-kQy"/>
                                             <outlet property="objectImageButton" destination="rxE-Li-Hnm" id="EOH-Kr-acw"/>
                                         </connections>
                                     </collectionViewCell>

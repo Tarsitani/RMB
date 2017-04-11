@@ -57,9 +57,10 @@ class LocalizationScreenViewController: UIViewController, UICollectionViewDelega
     internal func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell{
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "item_cell",  for: indexPath) as! LocalizationScreenCollectionViewCell
 		
+        
         cell.rememberScreenButton.setImage(UIImage(named: (geotification?.items[indexPath.row].iconTitle)!), for: UIControlState.normal)
 		
-		
+		cell.itemName.text = (geotification?.items[indexPath.row].iconTitle)!
 		
         cell.layer.cornerRadius = 8
 		
