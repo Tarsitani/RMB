@@ -42,8 +42,10 @@ class Geotification: NSObject, NSCoding, MKAnnotation {
 	}
 	
 	var subtitle: String? {
-		let eventTypeString = eventType.rawValue
-		return "Radius: \(radius)m - \(eventTypeString)"
+		//not used in this implementation
+		//let eventTypeString = eventType.rawValue
+		let radiusString = String(format: "%.01f", radius)
+		return "Radius: \(radiusString)m"
 	}
 	
 	var items: [Item] = []

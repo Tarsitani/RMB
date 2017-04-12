@@ -41,7 +41,6 @@ class ItemsDB: NSObject {
 			Item(iconTitle: "Medicine"),
 			Item(iconTitle: "Money"),
 			Item(iconTitle: "Mouse"),
-			Item(iconTitle: "Computer"),
 			Item(iconTitle: "Notebook"),
 			Item(iconTitle: "Pacifier"),
 			Item(iconTitle: "Pencil Case"),

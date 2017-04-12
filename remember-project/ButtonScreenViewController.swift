@@ -67,11 +67,14 @@ class ButtonScreenViewController: UIViewController, UICollectionViewDelegate, UI
 			if (item.iconTitle == itemName) {
 				selectedItems.remove(at: selectedItems.index(of: item)!)
 				cell.itemImage.tintColor = unselectedColor
+				delegate?.manageSelectedItems(item: Item(iconTitle: itemName!))
 				return
 			}
 		}
 		selectedItems.append(Item(iconTitle: itemName!))
 		cell.itemImage.tintColor = selectedColor
+		
+		delegate?.manageSelectedItems(item: Item(iconTitle: itemName!))
 	}
 
     // MARK: - Navigation

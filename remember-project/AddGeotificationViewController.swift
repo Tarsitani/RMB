@@ -12,6 +12,7 @@ import MapKit
 protocol AddGeotificationViewControllerDelegate {
 	
 	func addGeotification(coordinate: CLLocationCoordinate2D, radius: Double, identifier: String, note: String, eventType: EventType, items: [Item])
+	func manageSelectedItems(item: Item)
 }
 
 class AddGeotificationViewController: UIViewController {

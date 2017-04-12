@@ -171,15 +171,16 @@ class LocalizationViewController: UIViewController, UICollectionViewDelegate, UI
 		for item in geotifications[0].items {
 			if item.iconTitle == itemName {
 				geotifications[0].items.remove(at: geotifications[0].items.index(of: item)!)
+				saveAllGeotifications()
 				break
 			}
 		}
 		if (geotifications[0].items.isEmpty) {
-			stopMonitoring(geotification: geotifications[0])
-			remove(geotification: geotifications[0])
-			saveAllGeotifications()
+				showAlert(withTitle: "Warning", message: "This will delete the current geotification.")
+				stopMonitoring(geotification: geotifications[0])
+				remove(geotification: geotifications[0])
+				saveAllGeotifications()
 		}
-		showAlert(withTitle: "Warning", message: "The current registered geotification has been deleted")
 
 		collectionView.reloadData()
 	}
@@ -193,21 +194,44 @@ class LocalizationViewController: UIViewController, UICollectionViewDelegate, UI
 			vc.delegate = self
 		}
 	}
-
 }
 
 //MARK: AddGeotificationViewControllerDelegate
 extension LocalizationViewController: AddGeotificationViewControllerDelegate {
 	
 	func addGeotification(coordinate: CLLocationCoordinate2D, radius: Double, identifier: String, note: String, eventType: EventType, items: [Item]) {
+		let newGeotification = Geotification(coordinate: coordinate, radius: radius, identifier: "Current Geotification", note: "Current Geotification", eventType: .onExit, items: items)
 		if (geotifications.isEmpty) {
-			let newGeotification = Geotification(coordinate: coordinate, radius: radius, identifier: "Current Geotification", note: "Current Geotification", eventType: .onExit, items: items)
 			add(geotification: newGeotification)
 			startMonitoring(geotification: newGeotification)
 		} else {
-			geotifications[0].items.append(contentsOf: items)
+			for newItem in items {
+				if (geotifications[0].items.contains { (item) -> Bool in
+					item.iconTitle == newItem.iconTitle
+				}){ continue } else {
+					geotifications[0].items.append(newItem)
+				}
+			}
+			stopMonitoring(geotification: geotifications[0])
+			remove(geotification: geotifications[0])
+			add(geotification: newGeotification)
+			startMonitoring(geotification: newGeotification)
 		}
 		saveAllGeotifications()
+		localizationCollectionView.reloadData()
+	}
+	
+	func manageSelectedItems(item: Item) {
+		if (!geotifications.isEmpty && !geotifications[0].items.isEmpty) {
+			for geoItem in geotifications[0].items {
+				if (geoItem.iconTitle == item.iconTitle) {
+					geotifications[0].items.remove(at: geotifications[0].items.index(of: geoItem)!)
+					localizationCollectionView.reloadData()
+					return
+				}
+			}
+			geotifications[0].items.append(item)
+		}
 		localizationCollectionView.reloadData()
 	}
 }
@@ -255,9 +279,10 @@ extension LocalizationViewController: MKMapViewDelegate {
 	func mapView(_ mapView: MKMapView, rendererFor overlay: MKOverlay) -> MKOverlayRenderer {
 		if overlay is MKCircle {
 			let circleRenderer = MKCircleRenderer(overlay: overlay)
+			let selectedColor = UIColor(red: 0.3451, green: 0.3373, blue: 0.8392, alpha: 1.0)
 			circleRenderer.lineWidth = 1.0
-			circleRenderer.strokeColor = .purple
-			circleRenderer.fillColor = UIColor.purple.withAlphaComponent(0.2)
+			circleRenderer.strokeColor = selectedColor
+			circleRenderer.fillColor = selectedColor.withAlphaComponent(0.4)
 			return circleRenderer
 		}
 		return MKOverlayRenderer(overlay: overlay)
