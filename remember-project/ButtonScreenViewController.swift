@@ -8,60 +8,81 @@
 
 import UIKit
 
-protocol SelectedItemsDelegate:NSObjectProtocol {
-	func appendSelectedItems(selectedItem:Item)
-}
-
-class ButtonScreenViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, AddItemDelegate {
+class ButtonScreenViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
 	
-    @IBOutlet weak var ButtonScreenCollectionView: UICollectionView!
-    
-    var itemsDB = ItemsDB()
+	let reuseIdentifier = "itemCell"
+	
+    @IBOutlet weak var itemsCollectionView: UICollectionView!
+	
 	var selectedItems:[Item] = []
 	
-	var delegate: SelectedItemsDelegate?
-    
+	var delegate: AddGeotificationViewControllerDelegate?
+	
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.ButtonScreenCollectionView.delegate = self
-        self.ButtonScreenCollectionView.dataSource = self
+		itemsCollectionView.delegate = self
+        itemsCollectionView.dataSource = self
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
-    
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return itemsDB.allObjects.count
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "remember_cell",  for: indexPath) as! ButtonScreenCollectionViewCell
-        
-        //set images in collectionView while you have them to show
-		cell.itemTitle = itemsDB.allObjects[indexPath.row].iconTitle!
-        cell.objectImageButton.setImage(UIImage(named: itemsDB.allObjects[indexPath.row].iconTitle!), for: UIControlState.normal)
+	//Tell the collection view the amount of cells to create
+	func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int{
+		return ItemsDB.allObjects.count
+	}
+	
+	//Creates each cell properly
+	func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell{
 		
-        cell.delegate = self
-        cell.layer.cornerRadius = 8
-        return cell
-    }
-    
-    func addItem(title: String) {
-        //get the button tag and use it as an index to find what image it refers
-		//add the image to the object list on localizationScreen
-		delegate?.appendSelectedItems(selectedItem: itemsDB.getItemByIconTitle(title: title)!)
-    }
-    
+		let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier,  for: indexPath) as! ItemCollectionViewCell
+		
+		let itemPath = (ItemsDB.allObjects[indexPath.row].iconTitle)!
+		
+		let selectedColor = UIColor(red: 0.3451, green: 0.3373, blue: 0.8392, alpha: 1.0)
+		let unselectedColor = UIColor.gray
+		
+		cell.itemImage.image = UIImage(named: itemPath)
+		cell.itemName.text = itemPath
+		cell.item = ItemsDB.getItemByIconTitle(title: itemPath)
+		
+		cell.itemImage.tintColor = unselectedColor
+		for item in selectedItems {
+			if (item.iconTitle == itemPath) {
+				cell.itemImage.tintColor = selectedColor
+				break
+			}
+		}
+		
+		cell.layer.cornerRadius = 8
+		
+		return cell
+	}
+	
+	//Registers or removes an item
+	func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+		let cell = collectionView.cellForItem(at: indexPath) as! ItemCollectionViewCell
+		let itemName = cell.itemName.text
+		let selectedColor = UIColor(red: 0.3451, green: 0.3373, blue: 0.8392, alpha: 1.0)
+		let unselectedColor = UIColor.gray
+		
+		for item in selectedItems {
+			if (item.iconTitle == itemName) {
+				selectedItems.remove(at: selectedItems.index(of: item)!)
+				cell.itemImage.tintColor = unselectedColor
+				return
+			}
+		}
+		selectedItems.append(Item(iconTitle: itemName!))
+		cell.itemImage.tintColor = selectedColor
+	}
 
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller
+		if (segue.identifier == "toMap") {
+			let vc = segue.destination as! AddGeotificationViewController
+			vc.items = selectedItems
+			vc.delegate = delegate as AddGeotificationViewControllerDelegate!
+		}
     }
     
     @IBAction func unwindToHome(_ sender: UIBarButtonItem) {

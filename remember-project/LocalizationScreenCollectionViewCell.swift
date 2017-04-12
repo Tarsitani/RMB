@@ -15,5 +15,5 @@ protocol PressedButtonNameDelegate: NSObjectProtocol{
 class LocalizationScreenCollectionViewCell: UICollectionViewCell {
     
     @IBOutlet weak var rememberScreenButton: UIButton!
-	@IBAction func toRemeberButton(_ sender: UIButton){}
+	@IBAction func toRememberButton(_ sender: UIButton){}
 }

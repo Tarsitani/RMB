@@ -18,6 +18,7 @@ struct GeoKey {
 	static let identifier = "identifier"
 	static let note = "note"
 	static let eventType = "eventType"
+	static let items = "items"
 }
 
 enum EventType: String {
@@ -47,12 +48,13 @@ class Geotification: NSObject, NSCoding, MKAnnotation {
 	
 	var items: [Item] = []
 	
-	init(coordinate: CLLocationCoordinate2D, radius: CLLocationDistance, identifier: String, note: String, eventType: EventType) {
+	init(coordinate: CLLocationCoordinate2D, radius: CLLocationDistance, identifier: String, note: String, eventType: EventType, items: [Item]) {
 		self.coordinate = coordinate
 		self.radius = radius
 		self.identifier = identifier
 		self.note = note
 		self.eventType = eventType
+		self.items = items
 	}
 	
 	// MARK: NSCoding
@@ -64,6 +66,7 @@ class Geotification: NSObject, NSCoding, MKAnnotation {
 		identifier = decoder.decodeObject(forKey: GeoKey.identifier) as! String
 		note = decoder.decodeObject(forKey: GeoKey.note) as! String
 		eventType = EventType(rawValue: decoder.decodeObject(forKey: GeoKey.eventType) as! String)!
+		items = (decoder.decodeObject(forKey: GeoKey.items) as! [Item])
 	}
 	
 	func encode(with coder: NSCoder) {
@@ -73,6 +76,8 @@ class Geotification: NSObject, NSCoding, MKAnnotation {
 		coder.encode(identifier, forKey: GeoKey.identifier)
 		coder.encode(note, forKey: GeoKey.note)
 		coder.encode(eventType.rawValue, forKey: GeoKey.eventType)
+		//coder.encodeObject(items, forkey: GeoKey.items)
+		coder.encode(items,forKey:GeoKey.items)
 	}
 	
 }

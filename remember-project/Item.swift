@@ -9,11 +9,30 @@
 import Foundation
 import UIKit
 
-class Item: NSObject {
+struct ItemKey {
+	static let iconTitleKey = "iconTitle"
+}
+
+class Item: NSObject, NSCoding {
 	
 	var iconTitle: String?
 	
 	init(iconTitle: String) {
 		self.iconTitle = iconTitle
 	}
+	
+	public func encode(with aCoder: NSCoder) {
+		
+		aCoder.encode(iconTitle, forKey: ItemKey.iconTitleKey)
+		
+	}
+	
+	public convenience required init?(coder aDecoder: NSCoder) {
+		
+		let x = aDecoder.decodeObject(forKey: ItemKey.iconTitleKey) as! String
+		
+		self.init(iconTitle: x)
+		
+	}
+	
 }

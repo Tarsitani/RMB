@@ -23,7 +23,7 @@ extension UIViewController {
 extension MKMapView {
 	func zoomToUserLocation() {
 		guard let coordinate = userLocation.location?.coordinate else { return }
-		let region = MKCoordinateRegionMakeWithDistance(coordinate, 10000, 10000)
+		let region = MKCoordinateRegionMakeWithDistance(coordinate, 2000, 2000)
 		setRegion(region, animated: true)
 	}
 }
