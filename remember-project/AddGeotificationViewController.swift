@@ -20,9 +20,10 @@ class AddGeotificationViewController: UIViewController {
 	var delegate: AddGeotificationViewControllerDelegate?
 	var items: [Item]?
 	
+	let minimumRadius = 25.0
 	var radius: Double = 100.0 {
 		willSet(changedValue) {
-			if (abs(radius - changedValue) >= 10.0) {
+			if (abs(radius - changedValue) >= 1) {
 				drawOverlayCircle()
 			}
 		}
@@ -37,12 +38,14 @@ class AddGeotificationViewController: UIViewController {
 	}
 	
 	@IBAction func radiusSliderChanged(_ sender: UISlider) {
-		radius = Double(radiusSlider.value)
+		radius = Double(pow(5.0, radiusSlider.value))*minimumRadius //logaritmic scale
 	}
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
+		self.mapView.showsUserLocation = true
 		self.mapView.delegate = self
+		self.mapView.setUserTrackingMode(MKUserTrackingMode.follow, animated: true)
 		self.mapView.zoomToUserLocation()
 		drawOverlayCircle()
 	}

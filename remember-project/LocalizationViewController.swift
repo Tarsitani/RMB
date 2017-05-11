@@ -29,6 +29,8 @@ class LocalizationViewController: UIViewController, UICollectionViewDelegate, UI
         super.viewDidLoad()
 		
 		mapView.delegate = self
+		mapView.setUserTrackingMode(MKUserTrackingMode.follow, animated: true)
+		mapView.zoomToUserLocation()
 		
 		localizationCollectionView.delegate = self
 		localizationCollectionView.dataSource = self
